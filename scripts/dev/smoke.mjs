@@ -279,6 +279,49 @@ async function main() {
     (await fetch(`${BASE}/api/notifications`, { redirect: "manual" })).status !== 200,
   );
 
+  check(
+    "a signed-in visitor is sent on from the login screen",
+    (await fetch(`${BASE}/login`, { headers: { Cookie: admin }, redirect: "manual" }))
+      .status === 307,
+  );
+
+  // A signed cookie can outlive its account - a deleted or deactivated user, or
+  // a reloaded database. The gate and the page must not then disagree forever.
+  const { SignJWT } = await import("jose");
+  const orphanToken = await new SignJWT({
+    id: crypto.randomUUID(),
+    name: "Ghost",
+    username: "ghost",
+    role: "admin",
+  })
+    .setProtectedHeader({ alg: "HS256" })
+    .setSubject(crypto.randomUUID())
+    .setIssuedAt()
+    .setExpirationTime("7d")
+    .sign(new TextEncoder().encode(process.env.SESSION_SECRET));
+
+  let url = `${BASE}/`;
+  let hops = 0;
+  let landed = 0;
+  while (hops < 10) {
+    const res = await fetch(url, {
+      headers: { Cookie: `inv_session=${orphanToken}` },
+      redirect: "manual",
+    });
+    hops += 1;
+    const next = res.headers.get("location");
+    if (!next) {
+      landed = res.status;
+      break;
+    }
+    url = next.startsWith("http") ? next : BASE + next;
+  }
+  check(
+    "a session whose account is gone lands on the login form, not a redirect loop",
+    landed === 200 && url.includes("/login") && hops <= 3,
+    `${hops} hops, ended ${landed} at ${url}`,
+  );
+
   // ----------------------------------------------------- Admin-only actions
   console.log("\nAdmin-only actions");
   const productsBefore = DATA("products");
@@ -585,44 +628,64 @@ async function main() {
 
     await callAction("acceptSuggestions", [staged.id, 0.6], admin, reviewPage);
 
-    // Several Tally names can guess their way onto one product; applying that
-    // would silently lose stock, so it has to be caught.
-    const clashed = DATA("stock-imports").find((row) => row.id === staged.id);
-    const claims = new Map();
-    for (const l of clashed.lines) {
+    // The builder guarantees one claimant per product: a weak guess is handed
+    // back unmatched rather than left to clash at approval time.
+    const built = DATA("stock-imports").find((row) => row.id === staged.id);
+    const claimCount = new Map();
+    for (const l of built.lines) {
       if (!l.productId || l.action === "ignore") continue;
-      claims.set(l.productId, (claims.get(l.productId) ?? 0) + 1);
+      claimCount.set(l.productId, (claimCount.get(l.productId) ?? 0) + 1);
     }
     check(
-      "duplicate matches onto one product are detected",
-      [...claims.values()].some((n) => n > 1),
+      "no two rows are ever auto-matched to the same product",
+      [...claimCount.values()].every((n) => n === 1),
+      [...claimCount.values()].filter((n) => n > 1).length + " products double-claimed",
+    );
+    check(
+      "unmatched rows still carry a one-click hint",
+      built.lines.filter((l) => l.action === "unmapped" && l.hintProductId).length > 0,
     );
 
     await callAction("ignoreUnmapped", [staged.id], admin, reviewPage);
-    const stillClashing = await callAction("approveImport", [staged.id], admin, reviewPage);
-    check(
-      "approval is refused while two rows claim one product",
-      stillClashing.result?.ok === false &&
-        /more than one row/i.test(stillClashing.result.error),
-      JSON.stringify(stillClashing.result),
-    );
 
-    await callAction("resolveConflicts", [staged.id], admin, reviewPage);
-
-    const ready = DATA("stock-imports").find((row) => row.id === staged.id);
-    const after = new Map();
-    for (const l of ready.lines) {
-      if (!l.productId || l.action === "ignore") continue;
-      after.set(l.productId, (after.get(l.productId) ?? 0) + 1);
-    }
-    check(
-      "resolving leaves one row per product",
-      [...after.values()].every((n) => n === 1),
-    );
+    const cleared = DATA("stock-imports").find((row) => row.id === staged.id);
     check(
       "skipping clears the blockers",
-      ready.lines.every((l) => l.action !== "unmapped"),
+      cleared.lines.every((l) => l.action !== "unmapped"),
     );
+
+    // The safety net still has to catch a clash a person creates by hand.
+    // Done after the blockers are cleared so the clash is what gets reported.
+    const skippedRow = cleared.lines.find((l) => l.action === "ignore");
+    const takenProduct = cleared.lines.find((l) => l.productId)?.productId;
+    if (skippedRow && takenProduct) {
+      await callAction(
+        "updateImportLine",
+        [staged.id, skippedRow.externalName, takenProduct],
+        admin,
+        reviewPage,
+      );
+      const clashed = await callAction("approveImport", [staged.id], admin, reviewPage);
+      check(
+        "a clash created by hand still blocks approval",
+        clashed.result?.ok === false && /more than one row/i.test(clashed.result.error),
+        JSON.stringify(clashed.result),
+      );
+
+      await callAction("resolveConflicts", [staged.id], admin, reviewPage);
+      const fixed = DATA("stock-imports").find((row) => row.id === staged.id);
+      const after = new Map();
+      for (const l of fixed.lines) {
+        if (!l.productId || l.action === "ignore") continue;
+        after.set(l.productId, (after.get(l.productId) ?? 0) + 1);
+      }
+      check(
+        "resolving leaves one row per product",
+        [...after.values()].every((n) => n === 1),
+      );
+    }
+
+    const ready = DATA("stock-imports").find((row) => row.id === staged.id);
 
     const willChange = ready.lines.filter(
       (l) => l.action === "sale" || l.action === "purchase",

@@ -232,7 +232,57 @@ export class NameMatcher {
   }
 }
 
-/** Above this a suggestion is safe to apply without asking. */
-export const AUTO_ACCEPT = 0.72;
-/** Below this we do not even offer a suggestion. */
-export const SUGGEST_FLOOR = 0.3;
+/** Above this a suggestion is strong enough to confirm in bulk. */
+export const AUTO_ACCEPT = 0.6;
+
+/**
+ * Below this we say nothing rather than guess.
+ *
+ * A weak guess is worse than none: it has to be undone, and if two rows guess
+ * at the same product it manufactures a clash that blocks the whole import.
+ * Measured against a real Tally export, a floor of 0.3 produced 33 clashing
+ * products from pairings like "Dishwash 500ml" and "Handwash 500ml"; at 0.5,
+ * with the de-duplication below, none survive.
+ */
+export const SUGGEST_FLOOR = 0.5;
+
+export interface Claim {
+  productId: string | null;
+  matchedBy: "alias" | "exact" | "suggested" | "none";
+  confidence: number;
+}
+
+/**
+ * Makes sure at most one row lays claim to each product.
+ *
+ * A confirmed mapping (alias) or an identical name (exact) always wins. Among
+ * guesses the most confident wins, and the rest are handed back unmatched for
+ * a person to place - which is honest, because the matcher genuinely does not
+ * know which of them is right.
+ *
+ * Returns the indices that lost their claim.
+ */
+export function dedupeClaims(claims: Claim[]): Set<number> {
+  const rank = (claim: Claim) =>
+    claim.matchedBy === "alias" || claim.matchedBy === "exact"
+      ? Number.POSITIVE_INFINITY
+      : claim.confidence;
+
+  const best = new Map<string, number>();
+  for (let i = 0; i < claims.length; i += 1) {
+    const claim = claims[i];
+    if (!claim.productId) continue;
+    const current = best.get(claim.productId);
+    if (current === undefined || rank(claim) > rank(claims[current])) {
+      best.set(claim.productId, i);
+    }
+  }
+
+  const losers = new Set<number>();
+  for (let i = 0; i < claims.length; i += 1) {
+    const claim = claims[i];
+    if (!claim.productId) continue;
+    if (best.get(claim.productId) !== i) losers.add(i);
+  }
+  return losers;
+}

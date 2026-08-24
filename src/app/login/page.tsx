@@ -1,11 +1,18 @@
 import { Boxes } from "lucide-react";
+import { redirect } from "next/navigation";
 
 import { ThemeToggle } from "@/components/ui/theme";
+import { getCurrentUser } from "@/server/auth/guards";
 import { LoginForm } from "./login-form";
 
 export const metadata = { title: "Sign in · Godown Inventory" };
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
+  // Checked against the database, not just the cookie signature: an account
+  // that has been removed or switched off must land on the form, not be sent
+  // back to a screen that will only bounce it here again.
+  if (await getCurrentUser()) redirect("/");
+
   const params = await searchParams;
 
   // Only accept same-site paths, so ?next= cannot bounce anyone off-site.

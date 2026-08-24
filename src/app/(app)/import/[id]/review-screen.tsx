@@ -165,7 +165,11 @@ export function ReviewScreen({
           icon={<CircleHelp className="h-4 w-4" />}
           label="Need a decision"
           value={String(groups.needsYou.length)}
-          hint={blocking > 0 ? `${blocking} block approval` : "suggestions to confirm"}
+          hint={
+            record.totals.skippedUnits > 0
+              ? `${qty(record.totals.skippedUnits)} units would be left out`
+              : "suggestions to confirm"
+          }
           tone={groups.needsYou.length > 0 ? "warning" : "muted"}
         />
       </div>
@@ -247,8 +251,11 @@ export function ReviewScreen({
 
       {groups.needsYou.some((l) => l.action === "unmapped") && !readOnly && (
         <Alert tone="warning">
-          Some items in the file have no matching product. Match them, create them as
-          new, or skip them — then the file can be applied.
+          {groups.needsYou.filter((l) => l.action === "unmapped").length} item(s) in the
+          file have no confident match — Tally names them differently from your price
+          list. Take the suggested “closest” where it is right, pick the product
+          yourself, or create it as new. Skipping leaves that item&rsquo;s stock out of
+          the app: {qty(record.totals.skippedUnits)} units in total.
         </Alert>
       )}
 
@@ -433,6 +440,14 @@ function LineRow({
             ) : (
               <Badge tone="warning">no matching product</Badge>
             )}
+            {!line.productId && line.hintProductName && (
+              <span className="truncate text-muted">
+                closest: {line.hintProductName}{" "}
+                <span className="opacity-70">
+                  ({Math.round(line.hintConfidence * 100)}%)
+                </span>
+              </span>
+            )}
           </div>
         </div>
 
@@ -536,6 +551,24 @@ function LineRow({
               >
                 {line.productId ? "Change" : "Match to product"}
               </Button>
+              {/* A hint claims nothing until it is taken, so it can never
+                  have created the clash the operator is here to avoid. */}
+              {unresolved && line.hintProductId && (
+                <Button
+                  type="button"
+                  size="sm"
+                  disabled={busy}
+                  onClick={() =>
+                    onRun(() =>
+                      updateImportLine(importId, line.externalName, line.hintProductId),
+                    )
+                  }
+                >
+                  <Check className="h-4 w-4" />
+                  Use {line.hintProductName.slice(0, 22)}
+                  {line.hintProductName.length > 22 ? "…" : ""}
+                </Button>
+              )}
               {unresolved && (
                 <Button
                   type="button"

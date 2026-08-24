@@ -2,7 +2,15 @@ import "server-only";
 
 import ExcelJS from "exceljs";
 
-import { NameMatcher, SUGGEST_FLOOR, normalizeName } from "@/lib/matching";
+import {
+  NameMatcher,
+  SUGGEST_FLOOR,
+  dedupeClaims,
+  normalizeName,
+} from "@/lib/matching";
+
+/** Weak enough that we only offer it as a shortcut, never as a match. */
+const HINT_FLOOR = 0.25;
 import { getRepositories } from "../db";
 import type { ImportLine, LineAction, Product, StockImport } from "../db/types";
 import { loadContext } from "./inventory";
@@ -159,13 +167,15 @@ export async function buildImportLines(parsed: ParsedFile): Promise<ImportLine[]
   const matcher = new NameMatcher(
     products.filter((p) => p.active).map((p) => ({ id: p.id, name: p.name })),
   );
-  return parsed.rows.map((row, index) => {
+  const lines = parsed.rows.map((row, index) => {
     const key = normalized[index];
     const alias = aliases.get(key);
 
     let productId: string | null = null;
     let matchedBy: ImportLine["matchedBy"] = "none";
     let confidence = 0;
+    let hintProductId: string | null = null;
+    let hintConfidence = 0;
 
     if (alias) {
       // A remembered decision, including a deliberate "ignore" (productId null).
@@ -184,6 +194,10 @@ export async function buildImportLines(parsed: ParsedFile): Promise<ImportLine[]
           productId = id;
           matchedBy = "suggested";
           confidence = score;
+        } else if (id && score >= HINT_FLOOR) {
+          // Too weak to propose, but still worth offering as a shortcut.
+          hintProductId = id;
+          hintConfidence = score;
         }
       }
     }
@@ -203,9 +217,32 @@ export async function buildImportLines(parsed: ParsedFile): Promise<ImportLine[]
       action:
         alias && alias.productId === null ? "ignore" : actionFor(productId, delta),
       createAsNew: false,
+      hintProductId,
+      hintConfidence,
       externalRate: row.rate,
     } satisfies ImportLine;
   });
+
+  // Two rows must never claim one product: the weaker claim is handed back
+  // unmatched rather than left to clash at approval time.
+  const losers = dedupeClaims(lines);
+  return lines.map((line, index) =>
+    losers.has(index)
+      ? {
+          ...line,
+          // Losing the claim keeps the guess as a hint, so the operator can
+          // still take it in one click if it turns out to be the right one.
+          hintProductId: line.productId,
+          hintConfidence: line.confidence,
+          productId: null,
+          matchedBy: "none" as const,
+          confidence: 0,
+          systemQty: 0,
+          delta: 0,
+          action: "unmapped" as const,
+        }
+      : line,
+  );
 }
 
 const round3 = (value: number) => Math.round(value * 1000) / 1000;

@@ -181,6 +181,13 @@ export interface ImportLine {
   action: LineAction;
   /** Set when the operator asked for a brand new product to be created. */
   createAsNew: boolean;
+  /**
+   * The closest product we could find when the line ended up unmatched - shown
+   * as a one-click starting point. It is only a hint: it claims nothing, so it
+   * can never clash with another row's real match.
+   */
+  hintProductId: string | null;
+  hintConfidence: number;
   /** Average rate from the file, used to seed cost for brand new products. */
   externalRate: number;
 }

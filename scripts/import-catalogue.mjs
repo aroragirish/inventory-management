@@ -18,7 +18,15 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 import ExcelJS from "exceljs";
-import { NameMatcher, normalizeName, SUGGEST_FLOOR } from "../src/lib/matching.ts";
+import {
+  NameMatcher,
+  dedupeClaims,
+  normalizeName,
+  SUGGEST_FLOOR,
+} from "../src/lib/matching.ts";
+
+/** Weak enough to offer only as a shortcut, never as a match. */
+const HINT_FLOOR = 0.25;
 
 const scryptAsync = promisify(scrypt);
 const DATA_DIR = path.resolve(process.cwd(), process.env.DATA_DIR ?? "data");
@@ -318,6 +326,8 @@ async function main() {
     let productId = matcher.exactMatch(row.name);
     let matchedBy = "none";
     let confidence = 0;
+    let hintProductId = null;
+    let hintConfidence = 0;
 
     if (productId) {
       matchedBy = "exact";
@@ -343,6 +353,11 @@ async function main() {
         confidence = guess.score;
         suggested += 1;
       } else {
+        // Too weak to propose, but still a useful one-click starting point.
+        if (guess.id && guess.score >= HINT_FLOOR) {
+          hintProductId = guess.id;
+          hintConfidence = guess.score;
+        }
         unknown += 1;
       }
     }
@@ -360,8 +375,28 @@ async function main() {
       delta,
       action: !productId ? "unmapped" : delta === 0 ? "match" : delta > 0 ? "purchase" : "sale",
       createAsNew: false,
+      hintProductId,
+      hintConfidence,
       externalRate: row.rate,
     });
+  }
+
+  // Same rule the app applies on every upload: one claimant per product.
+  const losers = dedupeClaims(lines);
+  for (const index of losers) {
+    Object.assign(lines[index], {
+      // Keep the losing guess as a hint so it stays one click away.
+      hintProductId: lines[index].productId,
+      hintConfidence: lines[index].confidence,
+      productId: null,
+      matchedBy: "none",
+      confidence: 0,
+      systemQty: 0,
+      delta: 0,
+      action: "unmapped",
+    });
+    suggested -= 1;
+    unknown += 1;
   }
 
   const pendingImport = {

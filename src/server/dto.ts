@@ -240,6 +240,10 @@ export interface ImportLineDTO {
   deltaValue: number;
   /** Another row in the same file also points at this product. */
   conflict: boolean;
+  /** Closest product when unmatched - a shortcut, not a claim. */
+  hintProductId: string | null;
+  hintProductName: string;
+  hintConfidence: number;
 }
 
 export interface StockImportDTO {
@@ -260,6 +264,7 @@ export interface StockImportDTO {
     unmapped: number;
     ignored: number;
     conflicts: number;
+    skippedUnits: number;
     salesValue: number;
     purchaseValue: number;
   };
@@ -269,6 +274,7 @@ export function toImportLineDTO(
   line: ImportLine,
   product: Product | undefined,
   conflict = false,
+  hint?: Product,
 ): ImportLineDTO {
   const rate = product
     ? line.delta >= 0
@@ -291,6 +297,9 @@ export function toImportLineDTO(
     externalRate: line.externalRate,
     deltaValue: round2(Math.abs(line.delta) * rate),
     conflict,
+    hintProductId: line.hintProductId ?? null,
+    hintProductName: hint?.name ?? "",
+    hintConfidence: line.hintConfidence ?? 0,
   };
 }
 
@@ -320,6 +329,7 @@ export function toStockImportDTO(
       line,
       line.productId ? productById.get(line.productId) : undefined,
       Boolean(line.productId) && clashing.has(line.productId!),
+      line.hintProductId ? productById.get(line.hintProductId) : undefined,
     ),
   );
 
@@ -341,6 +351,13 @@ export function toStockImportDTO(
       unmapped: lines.filter((l) => l.action === "unmapped").length,
       ignored: lines.filter((l) => l.action === "ignore").length,
       conflicts: lines.filter((l) => l.conflict).length,
+      // What leaving the unmatched rows out would cost, so skipping is an
+      // informed choice rather than a shrug.
+      skippedUnits: round2(
+        lines
+          .filter((l) => l.action === "unmapped" || l.action === "ignore")
+          .reduce((sum, l) => sum + Math.abs(l.countedQty), 0),
+      ),
       salesValue: round2(
         lines.filter((l) => l.action === "sale").reduce((s, l) => s + l.deltaValue, 0),
       ),
