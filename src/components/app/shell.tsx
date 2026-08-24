@@ -3,7 +3,7 @@
 import { Boxes, ChevronRight, KeyRound, LogOut, MoreHorizontal, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/format";
 import { logout } from "@/server/actions/auth.actions";
@@ -171,12 +171,33 @@ function UserMenu({
   onChangePassword: () => void;
 }) {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
+  /**
+   * Close only on a click genuinely outside the menu.
+   *
+   * Relying on stopPropagation here does not work: React delegates from the
+   * document, and stopPropagation does not stop other listeners already bound
+   * to that same node. A click on "Sign out" would still close the menu,
+   * unmounting the form before the browser could submit it - which the browser
+   * reports as "form submission canceled because the form is not connected".
+   */
   useEffect(() => {
     if (!open) return;
-    const close = () => setOpen(false);
-    document.addEventListener("click", close);
-    return () => document.removeEventListener("click", close);
+    const onPointerDown = (event: MouseEvent | TouchEvent) => {
+      if (!menuRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("touchstart", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("touchstart", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
   }, [open]);
 
   const initials = user.name
@@ -187,13 +208,10 @@ function UserMenu({
     .toUpperCase();
 
   return (
-    <div className="relative">
+    <div className="relative" ref={menuRef}>
       <button
         type="button"
-        onClick={(event) => {
-          event.stopPropagation();
-          setOpen((value) => !value);
-        }}
+        onClick={() => setOpen((value) => !value)}
         aria-label="Account"
         aria-expanded={open}
         className="grid h-9 w-9 place-items-center rounded-full bg-surface-2 text-xs font-bold text-muted-strong transition-colors hover:bg-border"
@@ -202,10 +220,7 @@ function UserMenu({
       </button>
 
       {open && (
-        <div
-          onClick={(event) => event.stopPropagation()}
-          className="absolute top-full right-0 z-50 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-surface shadow-2xl"
-        >
+        <div className="absolute top-full right-0 z-50 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-surface shadow-2xl">
           <div className="border-b border-border px-3.5 py-3">
             <p className="truncate text-sm font-semibold text-foreground">{user.name}</p>
             <p className="mt-0.5 truncate text-xs text-muted">
