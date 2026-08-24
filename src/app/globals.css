@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f6;
+  --surface-hover: #f4f6fa;
+  --border: #dfe4ec;
+  --border-strong: #c6cedb;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --muted-strong: #475569;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-fg: #ffffff;
+  --primary-soft: #e0e9ff;
+  --primary-soft-fg: #1e40af;
+
+  --success: #059669;
+  --success-soft: #d5f5e8;
+  --success-soft-fg: #04654a;
+
+  --warning: #d97706;
+  --warning-soft: #fdf0d5;
+  --warning-soft-fg: #92500a;
+
+  --danger: #dc2626;
+  --danger-soft: #fde2e2;
+  --danger-soft-fg: #991b1b;
+
+  --ring: #93b4fd;
+}
+
+.dark {
+  --background: #0a0e15;
+  --surface: #131a24;
+  --surface-2: #1b2431;
+  --surface-hover: #1c2634;
+  --border: #26313f;
+  --border-strong: #37455a;
+  --foreground: #e8edf5;
+  --muted: #8fa0b6;
+  --muted-strong: #b3c1d4;
+
+  --primary: #4a86ff;
+  --primary-hover: #6b9bff;
+  --primary-fg: #06101f;
+  --primary-soft: #1a2c4d;
+  --primary-soft-fg: #a8c5ff;
+
+  --success: #22c39a;
+  --success-soft: #10352c;
+  --success-soft-fg: #6ee7c0;
+
+  --warning: #f0a13a;
+  --warning-soft: #3a2a11;
+  --warning-soft-fg: #f8ce8b;
+
+  --danger: #f8716c;
+  --danger-soft: #3d1a1c;
+  --danger-soft-fg: #fca5a5;
+
+  --ring: #2f5fbd;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-soft-fg: var(--primary-soft-fg);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-soft-fg: var(--success-soft-fg);
+
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-soft-fg: var(--warning-soft-fg);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-danger-soft-fg: var(--danger-soft-fg);
+
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  /* Keep iOS from zooming when a field is focused. */
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input,
+    select,
+    textarea,
+    button {
+      font-size: inherit;
+    }
+  }
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
 }

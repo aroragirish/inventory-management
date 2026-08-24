@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "recording": false,
+  "maxBodyChars": 0,
+  "maxLogBytes": 268435456,
+  "showSecrets": false,
+  "ignore": [],
+  "writtenBy": "vscode-fetch-inspector",
+  "writtenAt": "2026-08-24T13:02:21.894Z"
+}
