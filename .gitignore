@@ -42,3 +42,6 @@ next-env.d.ts
 
 # app data (json file store)
 /data
+
+# vercel
+.vercel

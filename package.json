@@ -10,9 +10,12 @@
     "typecheck": "tsc --noEmit",
     "data:build": "node scripts/import-catalogue.mjs",
     "data:rebuild": "node scripts/import-catalogue.mjs --keep-users",
-    "smoke": "node scripts/dev/smoke.mjs"
+    "smoke": "node scripts/dev/smoke.mjs",
+    "db:push": "node scripts/db-push.mjs",
+    "db:test": "node scripts/dev/test-sql.mjs"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
     "exceljs": "^4.4.0",
     "jose": "^6.2.10",
     "lucide-react": "^1.34.0",
@@ -23,6 +26,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.7",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

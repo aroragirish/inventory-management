@@ -16,10 +16,34 @@
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
+import { makeReader, usingPostgres } from "./read-data.mjs";
 
 const BASE = process.argv[2] ?? "http://localhost:3000";
-const DATA = (name) =>
-  JSON.parse(fs.readFileSync(path.join("data", `${name}.json`), "utf8"));
+
+/**
+ * Assertions read from whichever backend the app is actually using, so the
+ * same suite proves the JSON file store locally and Postgres in deployment.
+ * The helpers that perform mutations refresh this cache, so `DATA` stays a
+ * plain synchronous read at the call sites.
+ */
+let read = async () => [];
+const cache = new Map();
+const DATA = (name) => cache.get(name) ?? [];
+
+async function refreshData() {
+  for (const name of [
+    "users",
+    "categories",
+    "products",
+    "stock-entries",
+    "rate-changes",
+    "notifications",
+    "stock-aliases",
+    "stock-imports",
+  ]) {
+    cache.set(name, await read(name));
+  }
+}
 
 let pass = 0;
 let fail = 0;
@@ -35,27 +59,74 @@ function check(label, ok, detail = "") {
   }
 }
 
-/** Read action name -> id from the dev server reference manifest. */
+/**
+ * Read action name -> id from the dev server reference manifest.
+ *
+ * A restart leaves older compiled output behind, and calling a stale id gets
+ * "Failed to find Server Action", so the id from the most recently written
+ * file wins.
+ */
 function actionIds() {
   const ids = {};
+  const seenAt = {};
+
   const walk = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       if (entry.name === "cache") continue;
       const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) walk(full);
-      else if (/\.(js|json)$/.test(entry.name)) {
-        const text = fs.readFileSync(full, "utf8");
-        for (const m of text.matchAll(/"([0-9a-f]{40,42})":\{"name":"(\w+)"/g)) {
-          ids[m[2]] = m[1];
+      if (entry.isDirectory()) {
+        walk(full);
+        continue;
+      }
+      if (!/\.(js|json)$/.test(entry.name)) continue;
+
+      const mtime = fs.statSync(full).mtimeMs;
+      const text = fs.readFileSync(full, "utf8");
+      for (const m of text.matchAll(/"([0-9a-f]{40,42})":\{"name":"(\w+)"/g)) {
+        const [, id, name] = m;
+        if (seenAt[name] === undefined || mtime >= seenAt[name]) {
+          ids[name] = id;
+          seenAt[name] = mtime;
         }
       }
     }
   };
+
   walk(".next/dev");
   return ids;
 }
 
-const IDS = actionIds();
+let IDS = actionIds();
+
+/**
+ * Server actions only appear in the manifest once their page has compiled, and
+ * a dev server compiles lazily. Visiting every screen first makes all of them
+ * resolvable; the rescan on miss covers anything still being written.
+ */
+async function warmPages(cookie) {
+  for (const page of [
+    "/login", "/", "/rates", "/entry", "/inventory",
+    "/entries", "/categories", "/users", "/import",
+  ]) {
+    // Without a session every protected page just redirects to /login and
+    // never compiles, so its actions never reach the manifest.
+    await fetch(`${BASE}${page}`, {
+      headers: cookie ? { Cookie: cookie } : {},
+    }).catch(() => undefined);
+  }
+  IDS = actionIds();
+}
+
+function actionId(name) {
+  if (!IDS[name]) IDS = actionIds();
+  const id = IDS[name];
+  if (!id) {
+    throw new Error(
+      `No action id for ${name}. Open ${BASE} in a browser once so the dev server compiles it.`,
+    );
+  }
+  return id;
+}
 
 /**
  * Submit a useActionState form the way a browser without JavaScript does.
@@ -63,8 +134,7 @@ const IDS = actionIds();
  * the previous state, which for all our forms starts as null.
  */
 async function submitForm(actionName, fields, cookie, page = "/") {
-  const id = IDS[actionName];
-  if (!id) throw new Error(`No action id for ${actionName} — load its page first.`);
+  const id = actionId(actionName);
 
   const form = new FormData();
   form.set("$ACTION_REF_1", "");
@@ -79,6 +149,7 @@ async function submitForm(actionName, fields, cookie, page = "/") {
     redirect: "manual",
   });
   const body = await response.text();
+  await refreshData();
   return {
     status: response.status,
     body,
@@ -89,8 +160,7 @@ async function submitForm(actionName, fields, cookie, page = "/") {
 
 /** Call a plain (non-form) server action, e.g. deleteProduct(id). */
 async function callAction(actionName, args, cookie, page = "/") {
-  const id = IDS[actionName];
-  if (!id) throw new Error(`No action id for ${actionName} — load its page first.`);
+  const id = actionId(actionName);
 
   const response = await fetch(`${BASE}${page}`, {
     method: "POST",
@@ -103,6 +173,9 @@ async function callAction(actionName, args, cookie, page = "/") {
     redirect: "manual",
   });
   const body = await response.text();
+  // Every mutation goes through this helper or submitForm, so refreshing here
+  // keeps the assertion cache honest without an await at each call site.
+  await refreshData();
   const line = body.split("\n").find((row) => row.includes('"ok"'));
   return {
     status: response.status,
@@ -144,7 +217,16 @@ async function main() {
   // Start from known data so the run is repeatable. The store notices the
   // files changed on disk, so the running server picks this up without a
   // restart.
+  read = await makeReader();
+  const backend = usingPostgres() ? "Postgres" : "JSON files";
+  console.log(`storage: ${backend}
+`);
+
   execFileSync(process.execPath, ["scripts/import-catalogue.mjs"], { stdio: "ignore" });
+  if (usingPostgres()) {
+    execFileSync(process.execPath, ["scripts/db-push.mjs", "--force"], { stdio: "ignore" });
+  }
+  await refreshData();
 
   const date = todayIso();
 
@@ -161,6 +243,10 @@ async function main() {
   const adminLogin = await signIn("admin", process.env.SEED_ADMIN_PASSWORD ?? "admin@12345");
   check("admin can sign in", Boolean(adminLogin.session), adminLogin.body);
   const admin = adminLogin.session;
+
+  // Now that we can get past the login gate, make the dev server compile every
+  // screen so all of their server actions are addressable.
+  await warmPages(admin);
 
   const stamp = Date.now();
   const wrong = await signIn("ramesh", `wrong-password-${stamp}`);
@@ -484,14 +570,20 @@ async function main() {
     const unmappedBefore = staged.lines.filter((l) => l.action === "unmapped").length;
     check("unmatched names are flagged rather than guessed", unmappedBefore > 0);
 
-    const blocked = await callAction("approveImport", [staged.id], admin, "/import");
+    // These actions are declared on the review screen, so they must be posted
+    // to that route - a server action is only in scope for its own page.
+    const reviewPage = `/import/${staged.id}`;
+    await fetch(`${BASE}${reviewPage}`, { headers: { Cookie: admin } });
+    IDS = actionIds();
+
+    const blocked = await callAction("approveImport", [staged.id], admin, reviewPage);
     check(
       "approval is refused while names are unmatched",
       blocked.result?.ok === false && /matched or skipped/i.test(blocked.result.error),
       JSON.stringify(blocked.result),
     );
 
-    await callAction("acceptSuggestions", [staged.id, 0.6], admin, "/import");
+    await callAction("acceptSuggestions", [staged.id, 0.6], admin, reviewPage);
 
     // Several Tally names can guess their way onto one product; applying that
     // would silently lose stock, so it has to be caught.
@@ -506,8 +598,8 @@ async function main() {
       [...claims.values()].some((n) => n > 1),
     );
 
-    await callAction("ignoreUnmapped", [staged.id], admin, "/import");
-    const stillClashing = await callAction("approveImport", [staged.id], admin, "/import");
+    await callAction("ignoreUnmapped", [staged.id], admin, reviewPage);
+    const stillClashing = await callAction("approveImport", [staged.id], admin, reviewPage);
     check(
       "approval is refused while two rows claim one product",
       stillClashing.result?.ok === false &&
@@ -515,7 +607,7 @@ async function main() {
       JSON.stringify(stillClashing.result),
     );
 
-    await callAction("resolveConflicts", [staged.id], admin, "/import");
+    await callAction("resolveConflicts", [staged.id], admin, reviewPage);
 
     const ready = DATA("stock-imports").find((row) => row.id === staged.id);
     const after = new Map();
@@ -535,13 +627,13 @@ async function main() {
     const willChange = ready.lines.filter(
       (l) => l.action === "sale" || l.action === "purchase",
     );
-    const staffTry = await callAction("approveImport", [staged.id], staff, "/import");
+    const staffTry = await callAction("approveImport", [staged.id], staff, reviewPage);
     check(
       "staff cannot apply a stock file",
       staffTry.result?.ok === false && /admin/i.test(staffTry.result.error),
     );
 
-    const applied = await callAction("approveImport", [staged.id], admin, "/import");
+    const applied = await callAction("approveImport", [staged.id], admin, reviewPage);
     check("admin can apply the stock file", applied.result?.ok === true,
       JSON.stringify(applied.result));
 
@@ -589,7 +681,7 @@ async function main() {
 
     // Re-uploading the same figures must be a no-op, not a double count.
     const totalBefore = DATA("stock-entries").length;
-    const replay = await callAction("approveImport", [staged.id], admin, "/import");
+    const replay = await callAction("approveImport", [staged.id], admin, reviewPage);
     check(
       "an already-applied file cannot be applied twice",
       replay.result?.ok === false,

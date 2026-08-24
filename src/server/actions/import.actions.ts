@@ -22,7 +22,9 @@ function refresh() {
   revalidatePath("/", "layout");
 }
 
-const MAX_UPLOAD_BYTES = 5 * 1024 * 1024;
+// Kept just under the framework limit in next.config.ts so this check, and
+// its readable message, is the one that fires.
+const MAX_UPLOAD_BYTES = 4 * 1024 * 1024;
 
 /**
  * Step 1: read the uploaded file and stage what it would change. Nothing is
@@ -40,7 +42,7 @@ export async function uploadStockFile(
       return fail("Choose a stock file to upload.");
     }
     if (file.size > MAX_UPLOAD_BYTES) {
-      return fail("That file is larger than 5 MB. Export just the stock summary.");
+      return fail("That file is larger than 4 MB. Export just the Stock Summary, not the full day book.");
     }
     if (!/\.xlsx?$/i.test(file.name)) {
       return fail("Upload the Excel export from Tally (.xlsx).");

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createJsonRepositories } from "./json";
+import { createSqlRepositories } from "./sql";
 import type { Repositories } from "./repositories";
 
 /**
@@ -15,14 +16,18 @@ let instance: Repositories | null = null;
 export function getRepositories(): Repositories {
   if (instance) return instance;
 
-  const driver = process.env.DB_DRIVER ?? "json";
+  // A connection string on its own is enough to mean "use the database",
+  // which is what a host like Vercel injects when you attach one.
+  const driver =
+    process.env.DB_DRIVER ?? (process.env.DATABASE_URL ? "postgres" : "json");
   switch (driver) {
     case "json":
       instance = createJsonRepositories();
       break;
-    // case "sql":
-    //   instance = createSqlRepositories();
-    //   break;
+    case "postgres":
+    case "sql":
+      instance = createSqlRepositories();
+      break;
     default:
       throw new Error(`Unknown DB_DRIVER "${driver}"`);
   }
