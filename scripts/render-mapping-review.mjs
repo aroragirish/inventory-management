@@ -39,16 +39,14 @@ const decisionsTaken = (n) => [
     title: "Four items are counted loose but priced by the pack",
     outcome: "converted to packs",
     body:
-      "Tally counts steel scrubbers and Comfort Patla by the piece; the list prices them by the pack. Rather than pay a pack price for a single piece, the count is converted first — 3,437 yellow scrubbers is 286.417 packs of twelve, and it is the pack that costs ₹55. Their unit on the Products screen is now the pack.",
+      "Tally counts steel scrubbers and Comfort Patla by the piece; the list prices them by the pack. Rather than pay a pack price for a single piece, the count is converted first — 3,437 yellow scrubbers is 286.417 packs of twelve, and it is the pack that costs ₹55. Their unit on the Products screen is now the pack. Red reconciles exactly: ₹107 over twelve is ₹8.92, which is the rate Tally recorded to the paisa.",
     rows: [
       ["UC Steel Scrubber 12pcs Yellow", "3,437 pcs ÷ 12", "286.417 × ₹55", "₹15,753"],
       ["Steel Scrubber Green", "1,420 pcs ÷ 12", "118.333 × ₹71", "₹8,402"],
-      ["UC Steel Scrubber Red", "511 pcs ÷ 6", "85.167 × ₹107", "₹9,113"],
+      ["UC Steel Scrubber Red", "511 pcs ÷ 12", "42.583 × ₹107", "₹4,556"],
       ["UC Comfort Patla", "48 pcs ÷ 4", "12 × ₹107", "₹1,284"],
     ],
-    watch:
-      "One number to sanity-check when you get a moment: at six to a pack, Red works out at ₹17.83 a piece. Tally recorded ₹8.92 — which is exactly ₹107 ÷ 12 — and invoice 994 bills steel scrubber red at ₹7.56 a piece. If Red is really twelve to a pack, say so and its 85.167 becomes 42.583.",
-    settled: false,
+    settled: true,
   },
   {
     id: "alladin",
@@ -313,7 +311,7 @@ footer.foot { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--l
       All <strong>${audit.length} products</strong> matched against the <strong>${priceList.items.length} items</strong>
       in the Itwari and UltraClean lists, and written to the app. <strong>${fromList.length}</strong> now carry
       the list's own cost and selling price; the rest keep the rate Tally recorded and wait for a price.
-      This is the record of what was applied and why &mdash; decision 02 is the one still worth a look.
+      This is the record of what was applied, and the reasoning behind every call.
     </p>
   </header>
 
