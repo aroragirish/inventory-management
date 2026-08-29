@@ -5,6 +5,7 @@ import {
   Boxes,
   FileSpreadsheet,
   IndianRupee,
+  ReceiptText,
   Tag,
   TrendingUp,
   TriangleAlert,
@@ -136,8 +137,9 @@ export default async function DashboardPage() {
       {/* Things that need a person */}
       {(data.negativeCount > 0 ||
         data.lowStockCount + data.outOfStockCount > 0 ||
-        data.needsPricingCount > 0) && (
-        <div className="mb-3 grid grid-cols-3 gap-2.5 sm:gap-3">
+        data.needsPricingCount > 0 ||
+        data.paymentPendingCount > 0) && (
+        <div className="mb-3 grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
           <AttentionTile
             href="/inventory?status=negative"
             icon={<TriangleAlert className="h-4 w-4" />}
@@ -151,6 +153,15 @@ export default async function DashboardPage() {
             label="Need restock"
             value={data.lowStockCount + data.outOfStockCount}
             tone="warning"
+          />
+          {/* Stock that is on the shelf but not yet paid for. */}
+          <AttentionTile
+            href="/products?show=pending"
+            icon={<ReceiptText className="h-4 w-4" />}
+            label="Payment pending"
+            value={data.paymentPendingCount}
+            tone="warning"
+            note={`${money(data.paymentPendingValue)} owed`}
           />
           <AttentionTile
             href="/inventory?pricing=missing"
@@ -405,12 +416,15 @@ function AttentionTile({
   label,
   value,
   tone,
+  note,
 }: {
   href: string;
   icon: ReactNode;
   label: string;
   value: number;
   tone: "danger" | "warning" | "neutral";
+  /** Optional second line — the money behind the count. */
+  note?: string;
 }) {
   const tones = {
     danger: "text-danger",
@@ -432,6 +446,7 @@ function AttentionTile({
           </span>
         </div>
         <p className="num mt-1 text-xl font-bold text-foreground">{value}</p>
+        {note && value > 0 && <p className="num text-[11px] text-muted">{note}</p>}
       </Card>
     </Link>
   );

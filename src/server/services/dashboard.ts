@@ -43,6 +43,12 @@ export interface DashboardData {
   outOfStockCount: number;
   negativeCount: number;
   needsPricingCount: number;
+  /** How many items are held with the supplier's bill still unpaid. */
+  paymentPendingCount: number;
+  /** Units of that stock. */
+  paymentPendingUnits: number;
+  /** What those units cost - money owed to the supplier. */
+  paymentPendingValue: number;
 
   todayIn: PeriodTotals;
   todayOut: PeriodTotals;
@@ -53,6 +59,8 @@ export interface DashboardData {
 
   lowStock: ProductDTO[];
   negativeStock: ProductDTO[];
+  /** Biggest amounts owed first, so the largest bills get chased first. */
+  paymentPending: ProductDTO[];
   topByValue: ProductDTO[];
   topSellers: { product: ProductDTO; qty: number; value: number }[];
   categoryValue: { name: string; value: number; share: number }[];
@@ -204,6 +212,11 @@ export async function getDashboardData(): Promise<DashboardData> {
     .sort((a, b) => b.value - a.value)
     .slice(0, 7);
 
+  // Goods received against no bill: physically ours, financially not yet.
+  const paymentPending = dtos
+    .filter((row) => row.paymentPendingQty > 0)
+    .sort((a, b) => b.paymentPendingValue - a.paymentPendingValue);
+
   const approved = imports.filter((row) => row.status === "approved");
 
   return {
@@ -216,6 +229,13 @@ export async function getDashboardData(): Promise<DashboardData> {
     outOfStockCount: dtos.filter((row) => row.status === "out").length,
     negativeCount: negativeStock.length,
     needsPricingCount: dtos.filter((row) => row.needsPricing).length,
+    paymentPendingCount: paymentPending.length,
+    paymentPendingUnits: round2(
+      paymentPending.reduce((sum, row) => sum + row.paymentPendingQty, 0),
+    ),
+    paymentPendingValue: round2(
+      paymentPending.reduce((sum, row) => sum + row.paymentPendingValue, 0),
+    ),
 
     todayIn: { ...todayIn, value: round2(todayIn.value) },
     todayOut: { ...todayOut, value: round2(todayOut.value) },
@@ -225,6 +245,7 @@ export async function getDashboardData(): Promise<DashboardData> {
 
     lowStock: lowStock.slice(0, 8),
     negativeStock: negativeStock.slice(0, 8),
+    paymentPending: paymentPending.slice(0, 8),
     topByValue: [...onHand].sort((a, b) => b.value - a.value).slice(0, 6),
     topSellers,
     categoryValue,

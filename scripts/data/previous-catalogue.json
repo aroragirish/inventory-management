@@ -1,0 +1,2095 @@
+{
+  "note": "Snapshot of the catalogue as it stood before the 29-Aug-26 stock-summary rebuild, taken from Postgres. It is the only source for the distributor selling price, MRP and pack sizes, which the Tally report does not carry - so the rebuild stays reproducible after the database has been replaced.",
+  "takenAt": "2026-08-29",
+  "products": [
+    {
+      "id": "33993c88-b09d-42a8-bc79-452f649a6214",
+      "name": "3G",
+      "costPrice": 48,
+      "sellingPrice": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "d044e3a5-04f6-4d47-a6b7-2b38300e3e7c",
+      "name": "5 Star Hocky",
+      "costPrice": 37,
+      "sellingPrice": 43,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "be628751-e99d-4ad7-aa69-b88a53c1d6fd",
+      "name": "5G",
+      "costPrice": 57,
+      "sellingPrice": 66,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "cdb12a71-df3d-46d5-bb9c-d4704935739c",
+      "name": "7 Star Hocky",
+      "costPrice": 43,
+      "sellingPrice": 50,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "a78fb394-4a54-4d6e-ba52-446190c72e1a",
+      "name": "Air Freshner 50 gms Odonil type",
+      "costPrice": 18,
+      "sellingPrice": 21,
+      "mrp": 45,
+      "innerPack": 24,
+      "masterPack": 576
+    },
+    {
+      "id": "36eec570-9867-493b-9efd-51f93375ae94",
+      "name": "Alfa Hocky",
+      "costPrice": 54,
+      "sellingPrice": 63,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "66184c1f-0ee2-4aea-b85a-368a8a57fde4",
+      "name": "Alladin",
+      "costPrice": 688,
+      "sellingPrice": 792,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "8ff76e32-f8f7-4f06-9d27-559fc7fd87b5",
+      "name": "Amaze Floor Wiper 12\" ( 2 Ft. Metal Rod )",
+      "costPrice": 58,
+      "sellingPrice": 67,
+      "mrp": 249,
+      "innerPack": 48,
+      "masterPack": 128
+    },
+    {
+      "id": "fe011e82-ce1f-42d7-80bb-76980a45e792",
+      "name": "Amaze Floor Wiper 16\" ( 3 Ft. Metal Rod )",
+      "costPrice": 72,
+      "sellingPrice": 83,
+      "mrp": 299,
+      "innerPack": 36,
+      "masterPack": 108
+    },
+    {
+      "id": "85d2e17f-1a65-4044-a71f-3e468b81c907",
+      "name": "Amaze Floor Wiper 20\" ( 4 Ft. Metal Rod )",
+      "costPrice": 88,
+      "sellingPrice": 102,
+      "mrp": 399,
+      "innerPack": 24,
+      "masterPack": 72
+    },
+    {
+      "id": "e80fcb45-d8a6-4f5d-8a96-c315bac26fc6",
+      "name": "Amaze Kitchen Wiper",
+      "costPrice": 23,
+      "sellingPrice": 27,
+      "mrp": 99,
+      "innerPack": 12,
+      "masterPack": 108
+    },
+    {
+      "id": "cf348e9c-7e03-4159-b385-2f9f1f8f9858",
+      "name": "Aqua Mop 6\" ( 4 Ft. Metal Rod )",
+      "costPrice": 95,
+      "sellingPrice": 110,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "fbfc19b4-675b-4030-ad13-a8475bd32155",
+      "name": "Aqua Mop 6\" ( 4 Ft. SS Rod )",
+      "costPrice": 136,
+      "sellingPrice": 157,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "eae18697-8c61-4f84-92eb-3081aed99fe7",
+      "name": "Aqua Mop 6\" ( Without Rod )",
+      "costPrice": 65,
+      "sellingPrice": 75,
+      "mrp": 0,
+      "innerPack": 100,
+      "masterPack": 200
+    },
+    {
+      "id": "4e294c3b-ecb2-4905-879d-272c39e6f4c5",
+      "name": "Bathroom Cleaner 500ml",
+      "costPrice": 57,
+      "sellingPrice": 66,
+      "mrp": 550,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "62bed288-e3d5-430e-8afa-857153245ab9",
+      "name": "Besin Brush",
+      "costPrice": 19,
+      "sellingPrice": 22,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "8f94ff39-c9bb-4f5f-a176-b9172812ede5",
+      "name": "Beta Hocky",
+      "costPrice": 42,
+      "sellingPrice": 49,
+      "mrp": 110,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "8ff3f696-dda9-4acf-9f4c-58fa8f9e7ca1",
+      "name": "Big (Clean)",
+      "costPrice": 25,
+      "sellingPrice": 29,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "62dde1d2-64c4-4fab-a5c2-a5f50ecf191f",
+      "name": "Black Finyle 450ml",
+      "costPrice": 44,
+      "sellingPrice": 51,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 42
+    },
+    {
+      "id": "2c7136f3-8114-4a54-af99-494b2477188b",
+      "name": "Black Finyle 5 Lit.",
+      "costPrice": 324,
+      "sellingPrice": 373,
+      "mrp": 550,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "aeab9bff-681a-4627-95ab-2864dd343bf1",
+      "name": "Blue Dust control mop 18\" ( 4 Ft. Rod )",
+      "costPrice": 148,
+      "sellingPrice": 171,
+      "mrp": 449,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "cdd337ca-62ef-44ce-b19d-c04827f1528b",
+      "name": "Blue Dust control mop 24\" ( 5 Ft. Rod )",
+      "costPrice": 168,
+      "sellingPrice": 194,
+      "mrp": 490,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "0fc27d2a-c1d5-4cd5-a961-5a2e2b42b49c",
+      "name": "Carpet Brush",
+      "costPrice": 52,
+      "sellingPrice": 60,
+      "mrp": 99,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "id": "3ad2128b-1cd7-4ca3-8219-f87755b5bc9b",
+      "name": "Celling Round Broom ( 6 Ft. SS Rod )",
+      "costPrice": 124,
+      "sellingPrice": 143,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 150
+    },
+    {
+      "id": "7ec629d8-d703-420c-ae8a-7c657ac71a87",
+      "name": "Celling V Broom ( 6 Ft. SS Rod )",
+      "costPrice": 121,
+      "sellingPrice": 140,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 150
+    },
+    {
+      "id": "b7b82c67-2361-42bf-a4f1-5b1dbd0abc9a",
+      "name": "Cellulose Sponge 3 Pcs",
+      "costPrice": 58,
+      "sellingPrice": 67,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "id": "5604bd10-1b0a-46b7-83df-6b541bd1293e",
+      "name": "Chakra Mop With Micro fiber Refill ( 4ft. Metal Rod )",
+      "costPrice": 88,
+      "sellingPrice": 102,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "a4c18d1f-c9e9-4faa-9dc9-31edddd09676",
+      "name": "Chakra Mop With cotton Refill ( 4 ft. Metal Rod )",
+      "costPrice": 93,
+      "sellingPrice": 107,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "71513a64-31f1-4455-9c61-5b66eef33ac2",
+      "name": "Check Duster 18 X 28",
+      "costPrice": 14,
+      "sellingPrice": 17,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "id": "3d0463f2-d973-4285-830d-ceb1a0fa8391",
+      "name": "Classic",
+      "costPrice": 34,
+      "sellingPrice": 40,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "d250a2b5-f76d-4aa1-bd93-14bf727c3384",
+      "name": "Clean India",
+      "costPrice": 44,
+      "sellingPrice": 51,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "b4a081d4-d28f-4fce-8eae-80f4c827c565",
+      "name": "Colour Phenyle 1 Lit",
+      "costPrice": 32,
+      "sellingPrice": 37,
+      "mrp": 85,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "be2babaf-e12b-4715-8eaa-ce057b703841",
+      "name": "Colour Phenyle 5 Lit",
+      "costPrice": 130,
+      "sellingPrice": 150,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "cfbf870a-466b-4d56-a5fb-2772fab20722",
+      "name": "Comfort Patla ( 4 Pcs.)",
+      "costPrice": 107,
+      "sellingPrice": 124,
+      "mrp": 240,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "c961afed-8a00-4c08-92d1-de268996a3f2",
+      "name": "Cotton Dust control mop 18\" ( 4 Ft. Rod )",
+      "costPrice": 141,
+      "sellingPrice": 163,
+      "mrp": 449,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "22e1ed00-778e-430e-845e-8ba1f656232a",
+      "name": "Cotton Dust control mop 24\" ( 5 Ft. Rod )",
+      "costPrice": 165,
+      "sellingPrice": 190,
+      "mrp": 490,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "96d8d2af-a432-4e47-a8e4-cef16a781de0",
+      "name": "Cotton Wet Mop ( 5ft. Metal Rod )",
+      "costPrice": 145,
+      "sellingPrice": 167,
+      "mrp": 359,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "4b4055ac-dd51-4b5a-8bd6-9e2d75056aeb",
+      "name": "Crystal",
+      "costPrice": 82,
+      "sellingPrice": 95,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "83840249-807c-402e-a785-01e0e3ce678a",
+      "name": "Deep Clean Mop 9\" ( 4 Ft. Metal Rod )",
+      "costPrice": 110,
+      "sellingPrice": 127,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "id": "88fa78ff-7e36-4155-867c-2595cb6284fc",
+      "name": "Deep Clean Mop 9\" ( 4 Ft. SS Rod )",
+      "costPrice": 151,
+      "sellingPrice": 174,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "id": "2ab26e05-cd51-49d8-bf78-46aee1f3ddcc",
+      "name": "Deep Clean Mop 9\" ( Without Rod )",
+      "costPrice": 81,
+      "sellingPrice": 94,
+      "mrp": 0,
+      "innerPack": 80,
+      "masterPack": 160
+    },
+    {
+      "id": "c37de2c9-2e8b-4c25-9175-a2edcdc2637f",
+      "name": "Delta Hocky",
+      "costPrice": 33,
+      "sellingPrice": 38,
+      "mrp": 90,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "878957d2-7fb4-44d1-afea-6220bba49ac7",
+      "name": "Diamond Jala",
+      "costPrice": 41,
+      "sellingPrice": 48,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "id": "04a6e07b-4a2a-4945-844b-3585ee16b99d",
+      "name": "Dish Cleaning Pad Scrubber (3 Pcs.)",
+      "costPrice": 92,
+      "sellingPrice": 106,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "ce56d700-8bba-4179-a456-3e3d017b770d",
+      "name": "Dishwash Gel 1 Ltr.",
+      "costPrice": 113,
+      "sellingPrice": 130,
+      "mrp": 220,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "608c311d-49f1-4687-96ef-ec45835bfea1",
+      "name": "Dishwash Gel 5 Ltr.",
+      "costPrice": 399,
+      "sellingPrice": 459,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "955b4a58-a17e-4752-b569-9b57fa8804b7",
+      "name": "Dishwash Gel 500 ml",
+      "costPrice": 73,
+      "sellingPrice": 84,
+      "mrp": 125,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "440d387a-bfaf-433d-9362-a41c42cbc3ea",
+      "name": "Dolphin Dust Pan",
+      "costPrice": 23,
+      "sellingPrice": 27,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "63ad19ec-234a-4dfe-ae84-136e90c24e30",
+      "name": "Double Hocky",
+      "costPrice": 26,
+      "sellingPrice": 30,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 150
+    },
+    {
+      "id": "9e2bcd51-70da-4c25-9213-dc377f323b37",
+      "name": "Drain Cleaner",
+      "costPrice": 14,
+      "sellingPrice": 17,
+      "mrp": 25,
+      "innerPack": 24,
+      "masterPack": 576
+    },
+    {
+      "id": "742d117a-ce1e-480b-bafd-9a6c16f9bd00",
+      "name": "Dream Spin & Go Mop Plastic",
+      "costPrice": 495,
+      "sellingPrice": 570,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "3bb9e81b-480e-4a9b-ba9c-d595bc1c1947",
+      "name": "Dream Spin & Go Mop Steel",
+      "costPrice": 568,
+      "sellingPrice": 654,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "af3c5019-d3b9-4841-a85c-d4a5c0766ff6",
+      "name": "Durable Broom (NDB Packing)",
+      "costPrice": 52,
+      "sellingPrice": 60,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "1696c252-e942-4c8a-bb46-03b7bb92ffa6",
+      "name": "Dustwin Mop ( 5ft. Metal Rod )",
+      "costPrice": 123,
+      "sellingPrice": 142,
+      "mrp": 199,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "039403f2-3f61-48f4-b103-cfeecea67175",
+      "name": "Eagle Floor Wiper 12\" ( 2 Ft. SS Rod )",
+      "costPrice": 100,
+      "sellingPrice": 115,
+      "mrp": 199,
+      "innerPack": 48,
+      "masterPack": 128
+    },
+    {
+      "id": "c7f8fca9-f7a5-4dee-8c68-ed2285d1af0f",
+      "name": "Eagle Floor Wiper 15\" ( 3 Ft. SS Rod )",
+      "costPrice": 129,
+      "sellingPrice": 149,
+      "mrp": 240,
+      "innerPack": 36,
+      "masterPack": 108
+    },
+    {
+      "id": "082f6e59-375c-45d7-a7af-5f198b3f7e75",
+      "name": "Eagle Floor Wiper 20\" ( 4 Ft. SS Rod )",
+      "costPrice": 152,
+      "sellingPrice": 175,
+      "mrp": 320,
+      "innerPack": 24,
+      "masterPack": 72
+    },
+    {
+      "id": "a5d406dd-a8cf-41b2-8512-18b13e60a2d2",
+      "name": "Eagle Kitchen Wiper",
+      "costPrice": 35,
+      "sellingPrice": 41,
+      "mrp": 99,
+      "innerPack": 12,
+      "masterPack": 108
+    },
+    {
+      "id": "a34d2b9b-c982-4808-b644-479ca6a54757",
+      "name": "Elegent Spin & Go Mop Plastic",
+      "costPrice": 667,
+      "sellingPrice": 768,
+      "mrp": 1899,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "256a9d0d-216d-4647-b2a7-99f7cb99a880",
+      "name": "Elegent Spin & Go Mop Steel",
+      "costPrice": 748,
+      "sellingPrice": 861,
+      "mrp": 1999,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "381e29a0-6ce5-4842-8309-eab210add894",
+      "name": "Elite Spin & Go Mop Plastic",
+      "costPrice": 524,
+      "sellingPrice": 628,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "5b3c807a-6779-4e51-9200-f4ec3df08271",
+      "name": "Elite Spin & Go Mop Steel",
+      "costPrice": 598,
+      "sellingPrice": 688,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "ab9d4d1e-e251-4ae1-a9f4-c9765ba4ce29",
+      "name": "Ex. Large 30 X 37",
+      "costPrice": 67,
+      "sellingPrice": 78,
+      "mrp": 180,
+      "innerPack": 6,
+      "masterPack": 108
+    },
+    {
+      "id": "0e64a28d-c33c-407f-977c-603b367422dd",
+      "name": "Fiber Kharata",
+      "costPrice": 36,
+      "sellingPrice": 42,
+      "mrp": 89,
+      "innerPack": 100,
+      "masterPack": 300
+    },
+    {
+      "id": "24d5748a-689f-4993-888d-ef03dc7a7665",
+      "name": "Floor Duster 24 X 24",
+      "costPrice": 20,
+      "sellingPrice": 23,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "id": "4be83a14-cb7c-464c-a819-fd16c9fc72d5",
+      "name": "Floor Hard Surface Cleaner 5 Lit",
+      "costPrice": 281,
+      "sellingPrice": 324,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "89a02071-69ad-412c-bb53-235473667414",
+      "name": "Floor Hard Surface Cleaner 500 ml",
+      "costPrice": 58,
+      "sellingPrice": 67,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "d78e2011-4a87-4307-a7e5-dd00960bacb4",
+      "name": "Gama Hocky",
+      "costPrice": 36,
+      "sellingPrice": 42,
+      "mrp": 100,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "054328c0-fb57-4364-9985-15e331d50696",
+      "name": "Glass Cleaner 1 Ltr.",
+      "costPrice": 64,
+      "sellingPrice": 74,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "fef8d0e4-2da4-4794-8784-993ec125ed9d",
+      "name": "Glass Cleaner 5 Ltr.",
+      "costPrice": 273,
+      "sellingPrice": 314,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "316d3e34-72da-423a-8ac3-5605e2a7e995",
+      "name": "Glass Cleaner 500ml",
+      "costPrice": 58,
+      "sellingPrice": 67,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "99716dc9-3e84-44b4-829d-581ca90d081b",
+      "name": "Glass Duster 23 X 23",
+      "costPrice": 20,
+      "sellingPrice": 23,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "id": "120a33d4-ad45-46b6-bf8a-74820ba81a97",
+      "name": "Google Mop 6\" (4ft. Metal Rod )",
+      "costPrice": 84,
+      "sellingPrice": 97,
+      "mrp": 210,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "3650395e-3515-4f80-937b-df9f15edcec0",
+      "name": "Google Mop 6\" (4ft. Wooden Rod )",
+      "costPrice": 74,
+      "sellingPrice": 86,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "4b170093-7134-459b-bf0c-beeaa31e9b71",
+      "name": "Google Mop 6\" (Without Rod )",
+      "costPrice": 55,
+      "sellingPrice": 64,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 300
+    },
+    {
+      "id": "ee289e5e-b73b-49b8-8cf3-fb7a788c25a3",
+      "name": "Gray Dust control mop 18\" Heavy",
+      "costPrice": 234,
+      "sellingPrice": 270,
+      "mrp": 950,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "2ed28faf-98b4-4f63-8243-85b34f262f38",
+      "name": "Gray Dust control mop 24\" Heavy",
+      "costPrice": 278,
+      "sellingPrice": 320,
+      "mrp": 999,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "d1e71861-2c02-4f94-b2ee-57c36416d82c",
+      "name": "Green Gold",
+      "costPrice": 45,
+      "sellingPrice": 52,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "47924c37-751c-4bed-a1c5-b7c6cc71aa31",
+      "name": "Green Pad Big 4 X 6",
+      "costPrice": 8,
+      "sellingPrice": 10,
+      "mrp": 25,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "44ab6400-dc11-416a-b30c-4fadd075b908",
+      "name": "Green Pad Small 3 X 4",
+      "costPrice": 5,
+      "sellingPrice": 6,
+      "mrp": 10,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "fb7aa4af-9cfd-4d13-ae30-a6a3946a3f64",
+      "name": "Green Pad Sponge Scrubber",
+      "costPrice": 9,
+      "sellingPrice": 11,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "c04e96f6-798f-4ee9-b865-e686b8d4cb42",
+      "name": "Green Scrubber Pack of 10's",
+      "costPrice": 33,
+      "sellingPrice": 38,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "c41bad9c-7239-4c22-880c-3c7777ce678c",
+      "name": "Handwash 1 Ltr.",
+      "costPrice": 112,
+      "sellingPrice": 129,
+      "mrp": 220,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "23d59623-c85c-4fe2-b9bf-24032bd6f3ac",
+      "name": "Handwash 250ml",
+      "costPrice": 62,
+      "sellingPrice": 72,
+      "mrp": 90,
+      "innerPack": 0,
+      "masterPack": 48
+    },
+    {
+      "id": "0c8859df-4c15-4953-b57b-0eca143a745e",
+      "name": "Handwash 5 Ltr.",
+      "costPrice": 318,
+      "sellingPrice": 366,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "12aa13d4-193d-446a-94fb-deb0a3e01548",
+      "name": "Handwash 500ml",
+      "costPrice": 82,
+      "sellingPrice": 95,
+      "mrp": 160,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "5328cf0f-c90c-40ac-8e63-d709c33a953e",
+      "name": "Hardy ( 4 Ft. Metal Rod )",
+      "costPrice": 103,
+      "sellingPrice": 119,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "id": "bd90b0ef-0c18-45c5-8484-d145f18105fe",
+      "name": "Hardy ( 4 Ft. SS Rod )",
+      "costPrice": 145,
+      "sellingPrice": 167,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "id": "eed184d5-bae6-4e8b-aa5a-f3f6aef3e66a",
+      "name": "Infinity Round Jala Broom ( 6 Ft. Heavy Metal Rod )",
+      "costPrice": 96,
+      "sellingPrice": 111,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 96
+    },
+    {
+      "id": "6b5a822f-506b-42de-ac30-66f713a62d83",
+      "name": "Iron Tile Brush",
+      "costPrice": 49,
+      "sellingPrice": 57,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 96
+    },
+    {
+      "id": "35cca3b4-f923-483c-8f62-2944b3fe7f1c",
+      "name": "Jack",
+      "costPrice": 87,
+      "sellingPrice": 101,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "8966a27c-5a2b-44f6-a42a-a4095f6f6af1",
+      "name": "Jasmin",
+      "costPrice": 74,
+      "sellingPrice": 86,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "dfa41410-e076-4314-876b-d8176eca8cde",
+      "name": "Jumbo",
+      "costPrice": 49,
+      "sellingPrice": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "1b754522-cf4f-407c-8634-44b68fe129cc",
+      "name": "Jumbo 36 X 48",
+      "costPrice": 81,
+      "sellingPrice": 94,
+      "mrp": 216,
+      "innerPack": 6,
+      "masterPack": 96
+    },
+    {
+      "id": "c102002a-87e7-44d5-8666-3c724c4e4d13",
+      "name": "Jumbo Hocky",
+      "costPrice": 77,
+      "sellingPrice": 89,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 180
+    },
+    {
+      "id": "e2e0b91b-8c92-4741-9233-dca215c2aca8",
+      "name": "King",
+      "costPrice": 31,
+      "sellingPrice": 36,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "6150f321-2ef0-4f05-904e-9074ce13a91d",
+      "name": "Kitchen Roll 200 gms",
+      "costPrice": 53,
+      "sellingPrice": 61,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 72
+    },
+    {
+      "id": "583cf10e-65ed-43c4-b883-5581709d3a51",
+      "name": "Kohinoor",
+      "costPrice": 69,
+      "sellingPrice": 80,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "9dc0b0a5-ee1d-41a5-8ce7-6510cba48c31",
+      "name": "Large 24 X 32",
+      "costPrice": 39,
+      "sellingPrice": 45,
+      "mrp": 108,
+      "innerPack": 12,
+      "masterPack": 192
+    },
+    {
+      "id": "c7ed90e3-014d-4d28-8de8-73d09cf6296b",
+      "name": "Laundry Detergent 1 lit",
+      "costPrice": 159,
+      "sellingPrice": 183,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "258c713d-ba1d-4785-b225-07d0b813ca71",
+      "name": "Magic",
+      "costPrice": 42,
+      "sellingPrice": 49,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "25850c6a-bca8-4cf1-b915-e04bf1e5ad1e",
+      "name": "Majastic Mop 11\" ( 4 Ft. Metal Rod )",
+      "costPrice": 136,
+      "sellingPrice": 157,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "id": "118fb019-6be1-4785-a1bc-8175f4380f4b",
+      "name": "Majastic Mop 11\" ( 4 Ft. SS Rod )",
+      "costPrice": 179,
+      "sellingPrice": 206,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "id": "3fd0d0f9-29b7-4690-9fbf-d2c4e4e86fd1",
+      "name": "Majastic Mop 11\" ( Without Rod )",
+      "costPrice": 106,
+      "sellingPrice": 122,
+      "mrp": 0,
+      "innerPack": 60,
+      "masterPack": 120
+    },
+    {
+      "id": "140aff4a-97a0-4c7d-af17-dbe3155f4c53",
+      "name": "Medium (Clean)",
+      "costPrice": 20,
+      "sellingPrice": 23,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "a497ce5c-0f94-4e44-b485-1dcbeaf7896b",
+      "name": "Medium 19 X 21",
+      "costPrice": 30,
+      "sellingPrice": 35,
+      "mrp": 81,
+      "innerPack": 12,
+      "masterPack": 240
+    },
+    {
+      "id": "a310623f-6cce-4a25-b61f-dad479016655",
+      "name": "Microfiber Duster 16 X 16",
+      "costPrice": 46,
+      "sellingPrice": 53,
+      "mrp": 99,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "id": "2824afbc-c2d4-4e6c-8843-8aac1c2fa95a",
+      "name": "Mini Hardy ( 2 Ft. Metal Rod )",
+      "costPrice": 65,
+      "sellingPrice": 75,
+      "mrp": 149,
+      "innerPack": 48,
+      "masterPack": 192
+    },
+    {
+      "id": "90234cbd-13d6-4773-9395-ac17123fc21e",
+      "name": "Mini Hardy ( 2 Ft. SS Rod )",
+      "costPrice": 85,
+      "sellingPrice": 98,
+      "mrp": 149,
+      "innerPack": 48,
+      "masterPack": 192
+    },
+    {
+      "id": "239964ce-60f9-4152-93d3-50295840fd53",
+      "name": "Mini Wet Mop ( 5ft. Metal Rod )",
+      "costPrice": 131,
+      "sellingPrice": 151,
+      "mrp": 299,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "dea6a008-fef0-40c1-9b3b-272c1c7d4196",
+      "name": "Mr. Tall ( 4 Ft. Metal Rod )",
+      "costPrice": 114,
+      "sellingPrice": 132,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "id": "a92793b0-3e5a-4fb7-a4b7-728bdd21af9f",
+      "name": "Mr. Tall ( 4 Ft. SS Rod )",
+      "costPrice": 156,
+      "sellingPrice": 180,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "id": "13c51ea1-9ea3-49ba-b27e-d8d94cec4ec4",
+      "name": "Nephthalene Balls 100",
+      "costPrice": 24,
+      "sellingPrice": 28,
+      "mrp": 60,
+      "innerPack": 0,
+      "masterPack": 250
+    },
+    {
+      "id": "643ebc56-f6b8-403e-9f3c-4f89fe7d7d1f",
+      "name": "Nephthalene Balls 1000",
+      "costPrice": 218,
+      "sellingPrice": 251,
+      "mrp": 399,
+      "innerPack": 0,
+      "masterPack": 25
+    },
+    {
+      "id": "7bd48f55-5687-44b1-98dc-cecdcc62623e",
+      "name": "Nephthalene Balls 250",
+      "costPrice": 57,
+      "sellingPrice": 66,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "5f662a37-80a5-4fc3-be52-00bcb4500d48",
+      "name": "Nephthalene Balls 500",
+      "costPrice": 112,
+      "sellingPrice": 129,
+      "mrp": 210,
+      "innerPack": 0,
+      "masterPack": 50
+    },
+    {
+      "id": "fc21f618-8bca-4bd6-9983-6d0c99718f80",
+      "name": "New Win Mop with Metal Rod",
+      "costPrice": 140,
+      "sellingPrice": 161,
+      "mrp": 0,
+      "innerPack": 24,
+      "masterPack": 48
+    },
+    {
+      "id": "36aa1965-53f2-4aaf-adfa-e3a5cfa79b26",
+      "name": "New Win Mop with SS Rod",
+      "costPrice": 181,
+      "sellingPrice": 209,
+      "mrp": 0,
+      "innerPack": 24,
+      "masterPack": 48
+    },
+    {
+      "id": "7af0d705-ffe9-46ed-8424-e275ac1612f8",
+      "name": "No Dust Broom",
+      "costPrice": 88,
+      "sellingPrice": 102,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "688ad771-a06e-4bf1-be78-a995528e380b",
+      "name": "No Dust Broom 2 in 1",
+      "costPrice": 102,
+      "sellingPrice": 118,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "380d35fe-c8e9-4776-832b-e5cdfced8fe5",
+      "name": "Omega Hardy Broom 18\"",
+      "costPrice": 157,
+      "sellingPrice": 181,
+      "mrp": 390,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "id": "5ee3e410-cebc-41ed-ac03-1f907deae56c",
+      "name": "Omega Road Broom 18\"",
+      "costPrice": 177,
+      "sellingPrice": 204,
+      "mrp": 390,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "id": "8c102884-185c-4ff7-978e-a024538a3015",
+      "name": "Omega Toilet brush With Container",
+      "costPrice": 74,
+      "sellingPrice": 86,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "id": "a98c5514-cc2f-4c05-9ac7-e5b686b75d79",
+      "name": "Plunger Big",
+      "costPrice": 43,
+      "sellingPrice": 50,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "7901cc64-e0ff-4208-8a2f-39576d71b0f1",
+      "name": "Plunger Small",
+      "costPrice": 36,
+      "sellingPrice": 42,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 108
+    },
+    {
+      "id": "918dc781-c903-4c70-9280-219dce07480a",
+      "name": "Power",
+      "costPrice": 70,
+      "sellingPrice": 81,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "a972e32d-18de-4072-a6cd-3357f40c0e5d",
+      "name": "Premium Plastic Kharata",
+      "costPrice": 67,
+      "sellingPrice": 78,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 120
+    },
+    {
+      "id": "c9c0762c-3dc6-4c63-9108-5775e061e0b9",
+      "name": "Puma Press Patla",
+      "costPrice": 40,
+      "sellingPrice": 46,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "4b3aae61-7b5a-40c3-a0eb-facf9c1a774f",
+      "name": "Rajdhani",
+      "costPrice": 82,
+      "sellingPrice": 95,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "a62159d6-d4d9-4024-bae7-8e44374400d7",
+      "name": "Refill Blue Dust Control 18\"",
+      "costPrice": 41,
+      "sellingPrice": 48,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "7d8e5a94-5bbd-4c82-97af-55f08107a93c",
+      "name": "Refill Blue Dust Control 24\"",
+      "costPrice": 48,
+      "sellingPrice": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "38772dde-d8cd-4f14-826d-c170f39e5beb",
+      "name": "Refill Cotton Dust Control 18\"",
+      "costPrice": 35,
+      "sellingPrice": 41,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "4763065a-745e-4acd-9d0c-64c165e50fa7",
+      "name": "Refill Cotton Dust Control 24\"",
+      "costPrice": 47,
+      "sellingPrice": 55,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "4f221b36-de90-4291-95c5-42d31b2febc2",
+      "name": "Refill Cotton Wet Mop",
+      "costPrice": 65,
+      "sellingPrice": 75,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "e221c9e2-b776-47b7-be33-d58cce688959",
+      "name": "Refill Dustwin Mop",
+      "costPrice": 49,
+      "sellingPrice": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "a52a8958-cf13-42ef-bc33-705728a980b2",
+      "name": "Refill Google Mop",
+      "costPrice": 37,
+      "sellingPrice": 43,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "4897d720-427c-4c40-a9ae-970073020165",
+      "name": "Refill Gray Dust control mop 18\" Heavy",
+      "costPrice": 117,
+      "sellingPrice": 135,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "4a6890f9-f868-4d74-95dc-e97aa6aec670",
+      "name": "Refill Gray Dust control mop 24\" Heavy",
+      "costPrice": 131,
+      "sellingPrice": 151,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "6776ec8b-b029-4ca9-aa93-e858c639909c",
+      "name": "Refill Mini Wet Mop",
+      "costPrice": 56,
+      "sellingPrice": 65,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "52bb790f-c1bb-486a-b9c4-de8bb219bcee",
+      "name": "Refill Perfect Mop",
+      "costPrice": 61,
+      "sellingPrice": 71,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "91398985-dea8-45dd-a26e-8f259b7b7a82",
+      "name": "Refill Round Mop",
+      "costPrice": 22,
+      "sellingPrice": 26,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "3fd56c58-6370-4ddb-88cb-b6e1eac3a788",
+      "name": "Refill Win Mop",
+      "costPrice": 28,
+      "sellingPrice": 33,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "626a3244-fba5-4c2a-9c98-b01a771c07ef",
+      "name": "Refill Yahoo Mop",
+      "costPrice": 46,
+      "sellingPrice": 53,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "58597d30-3d6d-4fa1-830c-43c427f641d6",
+      "name": "Refilll Master Mop",
+      "costPrice": 21,
+      "sellingPrice": 25,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "id": "c0db0573-d93d-4731-ba3f-f76e0b0509e8",
+      "name": "Reliable Broom (NDB Packing)",
+      "costPrice": 52,
+      "sellingPrice": 60,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "7477604d-0706-4589-97d2-494a320e3e69",
+      "name": "Round Jala",
+      "costPrice": 44,
+      "sellingPrice": 51,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "id": "06652b83-632b-448e-a0e5-05ac6723d0ac",
+      "name": "Round Mop (4ft. Metal Rod )",
+      "costPrice": 68,
+      "sellingPrice": 79,
+      "mrp": 120,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "cb48e316-6d09-45d1-b543-1e0c15b67495",
+      "name": "Round Mop (4ft. Wooden Rod )",
+      "costPrice": 59,
+      "sellingPrice": 68,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "id": "220eb7e4-9252-4fda-b5e0-bea7e0378142",
+      "name": "Round Mop (Without Rod )",
+      "costPrice": 39,
+      "sellingPrice": 45,
+      "mrp": 0,
+      "innerPack": 200,
+      "masterPack": 400
+    },
+    {
+      "id": "adf0b28c-4aeb-498e-9aa3-69289a4767c7",
+      "name": "Round Toilet brush",
+      "costPrice": 48,
+      "sellingPrice": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 78
+    },
+    {
+      "id": "71509486-e277-403f-ac67-f453aa9b19cd",
+      "name": "Rubber Handgloves",
+      "costPrice": 30,
+      "sellingPrice": 35,
+      "mrp": 129,
+      "innerPack": 6,
+      "masterPack": 120
+    },
+    {
+      "id": "188e13d0-e10a-43bf-b551-e04b05326c1c",
+      "name": "Seni Cubes 100 gms",
+      "costPrice": 26,
+      "sellingPrice": 30,
+      "mrp": 49,
+      "innerPack": 0,
+      "masterPack": 144
+    },
+    {
+      "id": "1f3c2343-3784-4cc4-944f-0dabdfbaea7f",
+      "name": "Seni Cubes 140 gms",
+      "costPrice": 36,
+      "sellingPrice": 42,
+      "mrp": 70,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "bdbbec95-6e2d-46b0-8963-ab0ac1c7db9e",
+      "name": "Seni Cubes 200 gms",
+      "costPrice": 51,
+      "sellingPrice": 59,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 84
+    },
+    {
+      "id": "35f06f63-205c-4b40-a789-2b57f8c76109",
+      "name": "Shagun",
+      "costPrice": 29,
+      "sellingPrice": 34,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "f0d0d276-43ee-44ba-acbf-af306f2878f6",
+      "name": "Shubh",
+      "costPrice": 29,
+      "sellingPrice": 34,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "d7d2b150-b9ed-48fd-b019-2c977d07ec32",
+      "name": "Small (Clean)",
+      "costPrice": 17,
+      "sellingPrice": 20,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "1fbd3ef9-46ae-46f5-8811-3589e772d3e1",
+      "name": "Small 17 X 19",
+      "costPrice": 26,
+      "sellingPrice": 30,
+      "mrp": 63,
+      "innerPack": 12,
+      "masterPack": 288
+    },
+    {
+      "id": "c63eb8af-f8e4-4556-a42e-0c3f59f9f579",
+      "name": "Smart Plastic Kharata",
+      "costPrice": 66,
+      "sellingPrice": 76,
+      "mrp": 129,
+      "innerPack": 12,
+      "masterPack": 1200
+    },
+    {
+      "id": "b0bc5b38-d9cb-4875-bb35-685074ed4985",
+      "name": "Smart Spin & Go Mop Plastic",
+      "costPrice": 465,
+      "sellingPrice": 535,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "315b8c02-61d2-45cc-8b15-dda1625ddedd",
+      "name": "Smart Spin & Go Mop Steel",
+      "costPrice": 539,
+      "sellingPrice": 620,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "id": "d6ab2945-d18d-40bd-9b11-0e2148f8c526",
+      "name": "Spin & Go Rod + Plate",
+      "costPrice": 130,
+      "sellingPrice": 150,
+      "mrp": 350,
+      "innerPack": 20,
+      "masterPack": 80
+    },
+    {
+      "id": "fac82892-55aa-47b4-815b-c6b89947f657",
+      "name": "Spin & Go Rod + Plate Heavy",
+      "costPrice": 250,
+      "sellingPrice": 288,
+      "mrp": 550,
+      "innerPack": 20,
+      "masterPack": 80
+    },
+    {
+      "id": "b3b4e0aa-6cfb-47f9-8097-b3a1cc4c9a0b",
+      "name": "Star",
+      "costPrice": 41,
+      "sellingPrice": 48,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "8bfb91a7-facc-4048-854c-b2f35ca2c839",
+      "name": "Star Hocky",
+      "costPrice": 31,
+      "sellingPrice": 36,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "id": "745e07e8-920d-4365-b70f-c099114dcdff",
+      "name": "Steel Scrubber Medium Green 12pcs",
+      "costPrice": 71,
+      "sellingPrice": 82,
+      "mrp": 20,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "ef356ea6-e5ad-45ad-a50e-f918e9083cb7",
+      "name": "Steel Scrubber Medium Red 12 pcs",
+      "costPrice": 107,
+      "sellingPrice": 124,
+      "mrp": 25,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "43bee124-8e84-44d5-b2f3-24d3abc65419",
+      "name": "Steel Scrubber Small Yellow 12 pcs",
+      "costPrice": 55,
+      "sellingPrice": 64,
+      "mrp": 15,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "56dfea80-01ff-459f-b3df-0a9ee8e4a4c7",
+      "name": "Super",
+      "costPrice": 66,
+      "sellingPrice": 76,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "1cfe449d-241e-462e-8664-f994bd4f70fb",
+      "name": "Super safai Plastic Kharata",
+      "costPrice": 69,
+      "sellingPrice": 80,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 120
+    },
+    {
+      "id": "6d80c3ef-e2ab-4c6c-8244-5e08acd35d5f",
+      "name": "Sweeper (Clean) 400 gm",
+      "costPrice": 39,
+      "sellingPrice": 45,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "56ed2bd4-91bf-495e-808f-d38add5001ee",
+      "name": "Sweeper (Clean) 500 gm",
+      "costPrice": 47,
+      "sellingPrice": 55,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "5f01020f-6041-4702-9946-7a96aa0c66ff",
+      "name": "Tap Cleaner 250ml",
+      "costPrice": 85,
+      "sellingPrice": 98,
+      "mrp": 250,
+      "innerPack": 0,
+      "masterPack": 48
+    },
+    {
+      "id": "f4fda682-bba0-45cd-a518-6edb5da9ec13",
+      "name": "Thunder",
+      "costPrice": 32,
+      "sellingPrice": 37,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "6aae68b9-5c60-40e2-ba64-96dc2ed622b2",
+      "name": "Toilet Brush With Container",
+      "costPrice": 92,
+      "sellingPrice": 106,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 36
+    },
+    {
+      "id": "d319d52a-33b8-442c-aad8-2e6b55b7dcb9",
+      "name": "Toilet Cleaner 5 Lit",
+      "costPrice": 233,
+      "sellingPrice": 268,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "28bd6a9d-3992-44bd-85ff-d43b34f6de53",
+      "name": "Toilet Cleaner 500ml",
+      "costPrice": 52,
+      "sellingPrice": 60,
+      "mrp": 95,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "e74971d6-9280-4cd8-af22-5444fde51e0e",
+      "name": "Toilet Roll 100 gms",
+      "costPrice": 21,
+      "sellingPrice": 25,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 125
+    },
+    {
+      "id": "55faa5bc-4b00-4d5a-9b37-2a96ad146b01",
+      "name": "Toilet Roll 150 gms",
+      "costPrice": 28,
+      "sellingPrice": 33,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 80
+    },
+    {
+      "id": "e23d6a10-a664-4907-9223-c4517bf7beb5",
+      "name": "Trimurti",
+      "costPrice": 71,
+      "sellingPrice": 82,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "e7d5386f-aa09-4b4f-bd27-81a6231189bd",
+      "name": "Trishul",
+      "costPrice": 60,
+      "sellingPrice": 69,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "e4bfa8a0-acb7-4a76-8c03-358a879f0bb1",
+      "name": "Twincle",
+      "costPrice": 77,
+      "sellingPrice": 89,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "34fa7d09-da40-448f-942d-f8ba22119fea",
+      "name": "Twitter Mop 11\" ( 4ft. Wooden Rod )",
+      "costPrice": 122,
+      "sellingPrice": 141,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "id": "7ebd27d7-d693-40fb-9c9a-69d6ef03037d",
+      "name": "Twitter Mop 11\" ( 5ft. Metal Rod )",
+      "costPrice": 141,
+      "sellingPrice": 163,
+      "mrp": 400,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "id": "a02c3e46-38c0-41df-b403-66c531e81bd3",
+      "name": "Twitter Mop 11\" (Without Rod )",
+      "costPrice": 102,
+      "sellingPrice": 118,
+      "mrp": 0,
+      "innerPack": 90,
+      "masterPack": 180
+    },
+    {
+      "id": "91ece207-9d85-4052-b4f8-0738b409d97c",
+      "name": "UC Diamnod Jala Packing",
+      "costPrice": 50,
+      "sellingPrice": 58,
+      "mrp": 189,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "id": "cc20aa0f-ed1b-491c-9220-aaeab6703373",
+      "name": "UC Round Jala Packing",
+      "costPrice": 48,
+      "sellingPrice": 56,
+      "mrp": 199,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "id": "a3fe0ead-3ae2-4e80-b519-fdebe3c3674f",
+      "name": "Urinal Screen Premium",
+      "costPrice": 41,
+      "sellingPrice": 48,
+      "mrp": 120,
+      "innerPack": 10,
+      "masterPack": 120
+    },
+    {
+      "id": "62b5efde-91df-4b77-b8bf-dc6f0fc38620",
+      "name": "White Phenyle 1 Lit",
+      "costPrice": 29,
+      "sellingPrice": 34,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "id": "c6151d41-f346-4638-bc07-c8feea1eeaf7",
+      "name": "White Phenyle 5 Lit",
+      "costPrice": 112,
+      "sellingPrice": 129,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "id": "8add6c15-a0fe-4320-a4b3-b1fa06d65a6c",
+      "name": "Wonder Dust Pan",
+      "costPrice": 36,
+      "sellingPrice": 42,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "d46243f8-5ab7-4b73-ae6d-269e79b4d855",
+      "name": "Wonder Hockey",
+      "costPrice": 49,
+      "sellingPrice": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 84
+    },
+    {
+      "id": "92a003c9-1669-4cd7-9e30-aec9eb3d81ac",
+      "name": "Wooden Premium Patla",
+      "costPrice": 35,
+      "sellingPrice": 41,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "a97af037-1fbb-4438-a36f-2f83c008b784",
+      "name": "Xing Scrubber (3 Pcs.)",
+      "costPrice": 45,
+      "sellingPrice": 52,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "4bea44af-83a3-4a12-8bf8-4a555e166a9d",
+      "name": "Xing Scrubber (4 Pcs.)",
+      "costPrice": 39,
+      "sellingPrice": 45,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "id": "b075364b-5095-4f50-a3a4-09c347c02804",
+      "name": "Yahoo Mop 9\" (4ft. Metal Rod )",
+      "costPrice": 104,
+      "sellingPrice": 120,
+      "mrp": 250,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "id": "72d4de46-38e7-4506-ab7f-5ec485ded083",
+      "name": "Yahoo Mop 9\" (4ft. Wooden Rod )",
+      "costPrice": 95,
+      "sellingPrice": 110,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "id": "14f4c794-0c12-42dd-92a9-0537ea3859e2",
+      "name": "Yahoo Mop 9\" (Without Rod )",
+      "costPrice": 75,
+      "sellingPrice": 87,
+      "mrp": 0,
+      "innerPack": 120,
+      "masterPack": 240
+    },
+    {
+      "id": "92dfc1c6-8243-411d-9793-95d75419204d",
+      "name": "Zoom Hocky",
+      "costPrice": 63,
+      "sellingPrice": 73,
+      "mrp": 149,
+      "innerPack": 0,
+      "masterPack": 72
+    }
+  ],
+  "aliases": [
+    {
+      "externalName": "Aqua Mop 6\" with MS Rod",
+      "productId": "cf348e9c-7e03-4159-b385-2f9f1f8f9858"
+    },
+    {
+      "externalName": "Assam 3G Broom",
+      "productId": "33993c88-b09d-42a8-bc79-452f649a6214"
+    },
+    {
+      "externalName": "Assam 5G Broom",
+      "productId": "be628751-e99d-4ad7-aa69-b88a53c1d6fd"
+    },
+    {
+      "externalName": "Assam Grass Thunder",
+      "productId": "f4fda682-bba0-45cd-a518-6edb5da9ec13"
+    },
+    {
+      "externalName": "Basin Brush",
+      "productId": "62bed288-e3d5-430e-8afa-857153245ab9"
+    },
+    {
+      "externalName": "Bathroom Cleaner",
+      "productId": "4e294c3b-ecb2-4905-879d-272c39e6f4c5"
+    },
+    {
+      "externalName": "Bleaching Powder",
+      "productId": "918dc781-c903-4c70-9280-219dce07480a"
+    },
+    {
+      "externalName": "Carpet Brush",
+      "productId": "0fc27d2a-c1d5-4cd5-a961-5a2e2b42b49c"
+    },
+    {
+      "externalName": "Dimond Jala",
+      "productId": "878957d2-7fb4-44d1-afea-6220bba49ac7"
+    },
+    {
+      "externalName": "Dishwash 1 Lit",
+      "productId": "ce56d700-8bba-4179-a456-3e3d017b770d"
+    },
+    {
+      "externalName": "Eagle Kitchen Wiper",
+      "productId": "a5d406dd-a8cf-41b2-8512-18b13e60a2d2"
+    },
+    {
+      "externalName": "Ever Clean Phynile 1 Lit",
+      "productId": "62b5efde-91df-4b77-b8bf-dc6f0fc38620"
+    },
+    {
+      "externalName": "Google Refil",
+      "productId": "a52a8958-cf13-42ef-bc33-705728a980b2"
+    },
+    {
+      "externalName": "Green Pad 4*6",
+      "productId": "fb7aa4af-9cfd-4d13-ae30-a6a3946a3f64"
+    },
+    {
+      "externalName": "Handwash 250ml",
+      "productId": "23d59623-c85c-4fe2-b9bf-24032bd6f3ac"
+    },
+    {
+      "externalName": "Handwash 500ml",
+      "productId": "12aa13d4-193d-446a-94fb-deb0a3e01548"
+    },
+    {
+      "externalName": "Iron Tile Brush",
+      "productId": "6b5a822f-506b-42de-ac30-66f713a62d83"
+    },
+    {
+      "externalName": "Kharata Big",
+      "productId": "8ff3f696-dda9-4acf-9f4c-58fa8f9e7ca1"
+    },
+    {
+      "externalName": "Kharata Medium",
+      "productId": "140aff4a-97a0-4c7d-af17-dbe3155f4c53"
+    },
+    {
+      "externalName": "Kharata Small",
+      "productId": "d7d2b150-b9ed-48fd-b019-2c977d07ec32"
+    },
+    {
+      "externalName": "Orissa Broom Super",
+      "productId": "56dfea80-01ff-459f-b3df-0a9ee8e4a4c7"
+    },
+    {
+      "externalName": "Plastic Kharata",
+      "productId": "c63eb8af-f8e4-4556-a42e-0c3f59f9f579"
+    },
+    {
+      "externalName": "Premium Dust Pan",
+      "productId": "8add6c15-a0fe-4320-a4b3-b1fa06d65a6c"
+    },
+    {
+      "externalName": "Round Mop",
+      "productId": "7477604d-0706-4589-97d2-494a320e3e69"
+    },
+    {
+      "externalName": "Smart Spin N Go Mop Plastic",
+      "productId": "b0bc5b38-d9cb-4875-bb35-685074ed4985"
+    },
+    {
+      "externalName": "SNG MOP ELITE STEEL",
+      "productId": "5b3c807a-6779-4e51-9200-f4ec3df08271"
+    },
+    {
+      "externalName": "Toilet Cleaner 5 Ltr",
+      "productId": "d319d52a-33b8-442c-aad8-2e6b55b7dcb9"
+    },
+    {
+      "externalName": "Twinkle Broom",
+      "productId": "e4bfa8a0-acb7-4a76-8c03-358a879f0bb1"
+    },
+    {
+      "externalName": "UC Dolphin Dust Pan",
+      "productId": "440d387a-bfaf-433d-9362-a41c42cbc3ea"
+    },
+    {
+      "externalName": "Uc Freshscent White 5 Lit",
+      "productId": "c6151d41-f346-4638-bc07-c8feea1eeaf7"
+    },
+    {
+      "externalName": "UC Garbage Bag 24*32 Large",
+      "productId": "9dc0b0a5-ee1d-41a5-8ce7-6510cba48c31"
+    },
+    {
+      "externalName": "UC Glass Cleaner 500ml",
+      "productId": "316d3e34-72da-423a-8ac3-5605e2a7e995"
+    },
+    {
+      "externalName": "UC Google Mop with Metal Rod",
+      "productId": "120a33d4-ad45-46b6-bf8a-74820ba81a97"
+    },
+    {
+      "externalName": "UC Twitter Wet Mop with Metal Rod",
+      "productId": "7ebd27d7-d693-40fb-9c9a-69d6ef03037d"
+    },
+    {
+      "externalName": "UC Wooden Patla",
+      "productId": "92a003c9-1669-4cd7-9e30-aec9eb3d81ac"
+    },
+    {
+      "externalName": "Wonder Hockey",
+      "productId": "d46243f8-5ab7-4b73-ae6d-269e79b4d855"
+    },
+    {
+      "externalName": "UC Jumbo Hockey",
+      "productId": "c102002a-87e7-44d5-8666-3c724c4e4d13"
+    },
+    {
+      "externalName": "UC SNG Mop Dream Plastic",
+      "productId": "742d117a-ce1e-480b-bafd-9a6c16f9bd00"
+    },
+    {
+      "externalName": "Yahoo Mop Without Rod",
+      "productId": "14f4c794-0c12-42dd-92a9-0537ea3859e2"
+    },
+    {
+      "externalName": "Kohinoor Broom",
+      "productId": "583cf10e-65ed-43c4-b883-5581709d3a51"
+    },
+    {
+      "externalName": "Mini Wet Mop Refil",
+      "productId": "6776ec8b-b029-4ca9-aa93-e858c639909c"
+    },
+    {
+      "externalName": "New Dust Go Broom",
+      "productId": "7af0d705-ffe9-46ed-8424-e275ac1612f8"
+    },
+    {
+      "externalName": "New Master Mop",
+      "productId": "58597d30-3d6d-4fa1-830c-43c427f641d6"
+    },
+    {
+      "externalName": "Orrisa Broom Alladin",
+      "productId": "66184c1f-0ee2-4aea-b85a-368a8a57fde4"
+    },
+    {
+      "externalName": "Orrisa Broom Trimurti",
+      "productId": "e23d6a10-a664-4907-9223-c4517bf7beb5"
+    },
+    {
+      "externalName": "Orrisa Grass Jasmin",
+      "productId": "8966a27c-5a2b-44f6-a42a-a4095f6f6af1"
+    },
+    {
+      "externalName": "Round Mop W/o Rod",
+      "productId": "220eb7e4-9252-4fda-b5e0-bea7e0378142"
+    },
+    {
+      "externalName": "Smart Spin N Go Steel",
+      "productId": "315b8c02-61d2-45cc-8b15-dda1625ddedd"
+    },
+    {
+      "externalName": "Sng Dream Steel",
+      "productId": "3bb9e81b-480e-4a9b-ba9c-d595bc1c1947"
+    },
+    {
+      "externalName": "Star Hockey",
+      "productId": "8bfb91a7-facc-4048-854c-b2f35ca2c839"
+    },
+    {
+      "externalName": "Sunny 1 Ltr",
+      "productId": "c41bad9c-7239-4c22-880c-3c7777ce678c"
+    },
+    {
+      "externalName": "Toilet Roll 100",
+      "productId": "e74971d6-9280-4cd8-af22-5444fde51e0e"
+    },
+    {
+      "externalName": "Trishul Broom",
+      "productId": "e7d5386f-aa09-4b4f-bd27-81a6231189bd"
+    },
+    {
+      "externalName": "UC Delta Toilet Hocky",
+      "productId": "c37de2c9-2e8b-4c25-9175-a2edcdc2637f"
+    },
+    {
+      "externalName": "UC Floor Duster",
+      "productId": "24d5748a-689f-4993-888d-ef03dc7a7665"
+    },
+    {
+      "externalName": "UC Garbage Bag 17*19 Small",
+      "productId": "1fbd3ef9-46ae-46f5-8811-3589e772d3e1"
+    },
+    {
+      "externalName": "UC Toilet Beta Hockey",
+      "productId": "8f94ff39-c9bb-4f5f-a176-b9172812ede5"
+    },
+    {
+      "externalName": "UC Toilet Cleaner 500ml",
+      "productId": "28bd6a9d-3992-44bd-85ff-d43b34f6de53"
+    },
+    {
+      "externalName": "UC Twist Win Mop with Metal Rod",
+      "productId": "fc21f618-8bca-4bd6-9983-6d0c99718f80"
+    },
+    {
+      "externalName": "UC Yahoo Mop with Metal Rod",
+      "productId": "b075364b-5095-4f50-a3a4-09c347c02804"
+    },
+    {
+      "externalName": "Xing Scrubber 3in1 Colour",
+      "productId": "4bea44af-83a3-4a12-8bf8-4a555e166a9d"
+    },
+    {
+      "externalName": "Yahoo Refil",
+      "productId": "626a3244-fba5-4c2a-9c98-b01a771c07ef"
+    },
+    {
+      "externalName": "Kitchen Roll",
+      "productId": "6150f321-2ef0-4f05-904e-9074ce13a91d"
+    },
+    {
+      "externalName": "Magic Broom",
+      "productId": "258c713d-ba1d-4785-b225-07d0b813ca71"
+    },
+    {
+      "externalName": "UC Zoom Toilet Hockey",
+      "productId": "92dfc1c6-8243-411d-9793-95d75419204d"
+    },
+    {
+      "externalName": "Wooden Rod",
+      "productId": "cb48e316-6d09-45d1-b543-1e0c15b67495"
+    },
+    {
+      "externalName": "UC Comfort Patla",
+      "productId": "cfbf870a-466b-4d56-a5fb-2772fab20722"
+    },
+    {
+      "externalName": "UC Freshscent Colour 1 Lit",
+      "productId": "b4a081d4-d28f-4fce-8eae-80f4c827c565"
+    },
+    {
+      "externalName": "Urinal Screen",
+      "productId": "a3fe0ead-3ae2-4e80-b519-fdebe3c3674f"
+    },
+    {
+      "externalName": "7 Star Hockey",
+      "productId": "cdb12a71-df3d-46d5-bb9c-d4704935739c"
+    },
+    {
+      "externalName": "Amaze Wiper 20\"",
+      "productId": "e80fcb45-d8a6-4f5d-8a96-c315bac26fc6"
+    },
+    {
+      "externalName": "Deep Clean Mop 9'' W/o Rod",
+      "productId": "2ab26e05-cd51-49d8-bf78-46aee1f3ddcc"
+    },
+    {
+      "externalName": "Laundry Detergent",
+      "productId": "c7ed90e3-014d-4d28-8de8-73d09cf6296b"
+    },
+    {
+      "externalName": "New Dust Go Broom 2 in 1",
+      "productId": "688ad771-a06e-4bf1-be78-a995528e380b"
+    }
+  ]
+}

@@ -33,6 +33,7 @@ export async function saveProduct(
       masterPack: formData.get("masterPack") ?? 0,
       lowStockThreshold: formData.get("lowStockThreshold"),
       openingStock: formData.get("openingStock") ?? 0,
+      paymentPendingQty: formData.get("paymentPendingQty") ?? 0,
       active: formData.get("active") === "on" || formData.get("active") === "true",
       rateNote: formData.get("rateNote") ?? "",
     });
@@ -69,6 +70,7 @@ export async function saveProduct(
         masterPack: input.masterPack,
         lowStockThreshold: input.lowStockThreshold,
         openingStock: input.openingStock,
+        paymentPendingQty: input.paymentPendingQty,
         // Setting a price clears the "needs pricing" badge.
         needsPricing: existing.needsPricing && input.sellingPrice <= 0,
         active: input.active,
@@ -133,6 +135,7 @@ export async function saveProduct(
       masterPack: input.masterPack,
       lowStockThreshold: input.lowStockThreshold,
       openingStock: input.openingStock,
+      paymentPendingQty: input.paymentPendingQty,
       needsPricing: input.sellingPrice <= 0,
       active: input.active,
     });

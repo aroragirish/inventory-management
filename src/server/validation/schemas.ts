@@ -9,7 +9,18 @@ const trimmed = (max: number) => z.string().trim().max(max);
 const requiredText = (label: string, max: number) =>
   trimmed(max).min(1, `${label} is required`);
 
-export const UNIT_VALUES = ["kg", "pcs", "box", "ltr", "bag", "mtr", "qtl"] as const;
+export const UNIT_VALUES = [
+  "kg",
+  "pcs",
+  "box",
+  "btl",
+  "can",
+  "pac",
+  "ltr",
+  "bag",
+  "mtr",
+  "qtl",
+] as const;
 
 export const loginSchema = z.object({
   username: requiredText("Username", 60),
@@ -47,6 +58,11 @@ export const productSchema = z.object({
   openingStock: z.coerce
     .number({ message: "Opening stock must be a number" })
     .min(0, "Opening stock cannot be negative")
+    .max(100_000_000)
+    .default(0),
+  paymentPendingQty: z.coerce
+    .number({ message: "Payment pending must be a number" })
+    .min(0, "Payment pending cannot be negative")
     .max(100_000_000)
     .default(0),
   active: z.boolean().default(true),

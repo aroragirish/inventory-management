@@ -401,6 +401,7 @@ export async function createProductForLine(
       masterPack: 0,
       lowStockThreshold: 12,
       openingStock: 0,
+      paymentPendingQty: 0,
       needsPricing: true,
       active: true,
     });

@@ -9,7 +9,9 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "data:build": "node scripts/import-catalogue.mjs",
-    "data:rebuild": "node scripts/import-catalogue.mjs --keep-users",
+    "data:rebuild": "node scripts/rebuild-from-stock-summary.mjs",
+    "data:price-list": "node scripts/build-price-list.mjs",
+    "data:review": "node scripts/render-mapping-review.mjs",
     "smoke": "node scripts/dev/smoke.mjs",
     "db:push": "node scripts/db-push.mjs",
     "db:test": "node scripts/dev/test-sql.mjs"

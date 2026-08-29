@@ -85,6 +85,7 @@ const PRODUCT_COLUMNS: ColumnMap<Product> = {
   masterPack: num("master_pack"),
   lowStockThreshold: num("low_stock_threshold"),
   openingStock: num("opening_stock"),
+  paymentPendingQty: num("payment_pending_qty"),
   needsPricing: bool("needs_pricing"),
   active: bool("active"),
   ...TIMESTAMPS,

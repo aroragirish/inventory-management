@@ -1,5 +1,10 @@
 /**
- * Builds the real data set from the three source spreadsheets.
+ * Builds the data set from the three source spreadsheets.
+ *
+ * SUPERSEDED. The catalogue now comes from the Tally stock summary - see
+ * scripts/rebuild-from-stock-summary.mjs. Running this replaces every product
+ * with the spreadsheet version, which is the older list. Keep it only for
+ * starting over from the price list.
  *
  *   node scripts/import-catalogue.mjs [--keep-users]
  *
@@ -242,7 +247,7 @@ async function main() {
     users = [
       {
         id: randomUUID(),
-        name: "Girish Arora",
+        name: "Piyush Jham",
         username: "admin",
         ...(await hash(ADMIN_PASSWORD)),
         role: "admin",
@@ -300,6 +305,7 @@ async function main() {
       // Alert at one inner pack; fall back to a sane floor when packing is unknown.
       lowStockThreshold: row.innerPack > 0 ? row.innerPack : 12,
       openingStock: 0,
+      paymentPendingQty: 0,
       needsPricing: false,
       active: true,
       createdAt: now,

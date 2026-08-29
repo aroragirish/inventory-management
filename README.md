@@ -14,9 +14,9 @@ are interchangeable.
 
 ```bash
 npm install
-npm run data:build  # build the catalogue from the source spreadsheets
-npm run db:push     # create the schema and load it into Postgres
-npm run dev         # http://localhost:3000
+npm run data:rebuild  # build the catalogue from the Tally stock summary
+npm run db:push       # create the schema and load it into Postgres
+npm run dev           # http://localhost:3000
 ```
 
 Working offline, or without a database? Set `DB_DRIVER=json` in `.env.local`
@@ -59,7 +59,10 @@ Use a **different** `SESSION_SECRET` in production from the one on your machine.
 | `npm run dev`        | Development server                                  |
 | `npm run build`      | Production build                                    |
 | `npm start`          | Serve the production build                          |
-| `npm run data:build` | Rebuild the catalogue from the source spreadsheets  |
+| `npm run data:rebuild`| Rebuild the catalogue from the stock summary + price list |
+| `npm run data:price-list` | Re-join the two halves of the price list       |
+| `npm run data:review`| Render the rebuild audit as a readable page          |
+| `npm run data:build` | Rebuild from the source spreadsheets (superseded)   |
 | `npm run db:push`    | Create the schema and load `data/` into Postgres    |
 | `npm run db:test`    | Check the schema and queries against real Postgres  |
 | `npm run smoke`      | End-to-end check against a running dev server       |
@@ -76,6 +79,7 @@ Use a **different** `SESSION_SECRET` in production from the one on your machine.
 | **Rates & Items** (`/rates`) | Every item with its rate and current stock |
 | **New Entry** | The daily job: log a challan of goods received, or goods dispatched |
 | **Inventory** | Search and filter stock; admins add products and change rates here |
+| **Products** (`/products`) | Admin only — the catalogue itself. Every product, one click from being edited: name, code, category, unit, both prices, alert level, payment pending |
 | **Daily Log** | Day-by-day history, filterable by date range, type and product |
 | **Stock File** | Upload the Tally stock summary, review the differences, then apply them |
 | **Categories** | Group products so lists stay manageable |
@@ -110,7 +114,65 @@ does not rewrite last month's figures, and the margin between the two is real.
 Stock is allowed to go negative, because Tally allows it and this app mirrors
 Tally. Negative items are flagged on the dashboard rather than hidden.
 
+### Goods received but not paid for
+
+Tally shows a negative closing balance when goods arrived and no purchase bill
+was passed against them. The stock is genuinely on the shelf — what is
+outstanding is the money. So the catalogue carries both facts separately:
+
+```
+opening stock       the quantity, counted positively, because it is there
+paymentPendingQty   the part of it the supplier has not been paid for
+```
+
+The dashboard totals what is owed, the Products screen filters to it, and the
+Inventory rows badge it. Set the pending quantity back to 0 once the bill is
+settled — nothing else moves, because no stock moved.
+
 ---
+
+## Where the catalogue comes from
+
+Two documents, each authoritative about a different thing:
+
+- the **Tally stock summary** says what we stock and how much of it;
+- the **price list** says what each item costs and sells for.
+
+`npm run data:rebuild` joins them into the whole data set:
+
+```
+scripts/data/stock-summary-<date>.json    the report, transcribed whole and
+                                           reconciled to its printed Grand Total
+scripts/data/price-list/*.csv             the two halves of the price list -
+                                           Itwari carries SS, UltraClean Dist.
+scripts/data/price-list-<date>.json       the two, joined by item name
+scripts/data/price-carryover-map.json     hand-checked Tally name -> list item
+scripts/data/catalogue-decisions.json     the calls no document could settle,
+                                           each with the reason behind it
+scripts/data/rebuild-audit.json           written every run: what happened to
+                                           every single line, and why
+```
+
+`npm run data:price-list` rebuilds the joined list from the CSVs;
+`npm run data:review` renders the audit as a page you can read.
+
+Both prices come from the price list. Tally's closing rate is a weighted average
+of what was paid across the year, and it had drifted more than 10% from the list
+on a third of the catalogue — taking both prices from one document is what makes
+every margin real. An item the list does not carry keeps its Tally rate as cost
+and is badged for a selling price.
+
+Items are matched onto the list by confirmed alias, identical name, or that
+hand-checked table — **never** by fuzzy match. Measured against this data the
+matcher scored "Master Clean Phynile 1 Lit" onto "White Phenyle 1 Lit" above the
+auto-accept floor. A wrong price is silent; a missing one is badged on screen
+until somebody fills it in.
+
+The same discipline caught two mappings the app had been carrying for months:
+"Amaze Wiper 20\"" pointed at *Amaze Kitchen Wiper*, and "Bleaching Powder" at
+*Power*, which is a broom. The check that found them is in
+`scripts/propose-price-mapping.mjs`: Tally's rate should land near the list's SS
+price when a match is right, so a large gap is evidence of a wrong one.
 
 ## Storage
 

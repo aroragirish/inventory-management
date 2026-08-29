@@ -58,6 +58,10 @@ export interface ProductDTO {
   marginPercent: number;
   lowStockThreshold: number;
   openingStock: number;
+  /** Units held whose purchase bill is still unpaid. 0 when nothing is owed. */
+  paymentPendingQty: number;
+  /** paymentPendingQty x cost - what is owed to the supplier for them. */
+  paymentPendingValue: number;
   needsPricing: boolean;
   active: boolean;
   /** Derived: opening stock plus the net of every entry. */
@@ -150,6 +154,8 @@ export function toProductDTO(
     marginPercent: product.sellingPrice > 0 ? round2((margin / product.sellingPrice) * 100) : 0,
     lowStockThreshold: product.lowStockThreshold,
     openingStock: product.openingStock,
+    paymentPendingQty: product.paymentPendingQty,
+    paymentPendingValue: round2(product.paymentPendingQty * product.costPrice),
     needsPricing: product.needsPricing,
     active: product.active,
     stock,

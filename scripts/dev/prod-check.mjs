@@ -27,13 +27,16 @@ const cookie = res.headers.getSetCookie().find((c) => c.startsWith("inv_session=
 check("admin can sign in against the production build", Boolean(cookie));
 if (!cookie) process.exit(1);
 
-for (const path of ["/", "/rates", "/entry", "/inventory", "/entries", "/categories", "/users"]) {
+for (const path of ["/", "/rates", "/entry", "/inventory", "/products", "/entries", "/categories", "/users"]) {
   const r = await fetch(`${BASE}${path}`, { headers: { Cookie: cookie } });
   const html = await r.text();
   check(`${path} renders`, r.status === 200 && !html.includes("__next_error__"), `status ${r.status}`);
   check(`${path} leaks no credentials`, !/passwordHash|"salt"/i.test(html));
 }
-check("home shows seeded data", (await (await fetch(`${BASE}/`, { headers: { Cookie: cookie } })).text()).includes("Basmati Rice"));
+// Data-agnostic on purpose: the catalogue is rebuilt from the Tally stock
+// summary, so naming any one product here would only go stale again.
+const productsHtml = await (await fetch(`${BASE}/products`, { headers: { Cookie: cookie } })).text();
+check("products screen renders the catalogue editor", productsHtml.includes("New product") && productsHtml.includes("The catalogue"));
 check("signed-out visitor is redirected", (await fetch(`${BASE}/`, { redirect: "manual" })).status === 307);
 
 console.log(`\n${pass} passed, ${fail} failed\n`);

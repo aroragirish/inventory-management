@@ -11,12 +11,25 @@
 
 export type Role = "admin" | "staff";
 
-export type Unit = "kg" | "pcs" | "box" | "ltr" | "bag" | "mtr" | "qtl";
+export type Unit =
+  | "kg"
+  | "pcs"
+  | "box"
+  | "btl"
+  | "can"
+  | "pac"
+  | "ltr"
+  | "bag"
+  | "mtr"
+  | "qtl";
 
 export const UNITS: { value: Unit; label: string }[] = [
   { value: "pcs", label: "Pieces" },
-  { value: "kg", label: "Kilogram" },
+  { value: "btl", label: "Bottle" },
+  { value: "can", label: "Can" },
+  { value: "pac", label: "Packet" },
   { value: "box", label: "Box" },
+  { value: "kg", label: "Kilogram" },
   { value: "bag", label: "Bag" },
   { value: "ltr", label: "Litre" },
   { value: "mtr", label: "Metre" },
@@ -79,6 +92,15 @@ export interface Product {
   lowStockThreshold: number;
   /** Stock counted before the first entry was logged in this system. */
   openingStock: number;
+  /**
+   * Units sitting in the godown that the supplier has not been paid for yet.
+   *
+   * Tally prints these as a negative closing balance - the goods arrived but no
+   * purchase bill was passed against them. The stock is physically there, so it
+   * counts as stock; what is outstanding is the money, which is what this
+   * carries. Set it back to 0 once the bill is settled.
+   */
+  paymentPendingQty: number;
   /** Came in from a stock file and has no price yet - badge it for follow-up. */
   needsPricing: boolean;
   active: boolean;

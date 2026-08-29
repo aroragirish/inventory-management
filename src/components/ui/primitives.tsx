@@ -182,13 +182,17 @@ export function Badge({
   tone = "neutral",
   children,
   className,
+  title,
 }: {
   tone?: Tone;
   children: ReactNode;
   className?: string;
+  /** Hover text, for badges that abbreviate something worth spelling out. */
+  title?: string;
 }) {
   return (
     <span
+      title={title}
       className={cn(
         "inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-0.5 text-xs font-semibold",
         TONES[tone],

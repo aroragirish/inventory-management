@@ -1,0 +1,1630 @@
+{
+  "note": "The May-2026 price list, joined from the two source documents under scripts/data/price-list/. purchase = Itwari SS price, selling = UltraClean Dist. price.",
+  "effective": "2026-05-01",
+  "items": [
+    {
+      "name": "Kohinoor",
+      "purchase": 69,
+      "selling": 80,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "King",
+      "purchase": 31,
+      "selling": 36,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Jasmin",
+      "purchase": 74,
+      "selling": 86,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Dhoom",
+      "purchase": 34,
+      "selling": 40,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Shubh",
+      "purchase": 29,
+      "selling": 34,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "3G",
+      "purchase": 48,
+      "selling": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "5G",
+      "purchase": 57,
+      "selling": 66,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "2G Tiger",
+      "purchase": 33,
+      "selling": 38,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Thunder",
+      "purchase": 32,
+      "selling": 37,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Classic",
+      "purchase": 34,
+      "selling": 40,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Magic",
+      "purchase": 42,
+      "selling": 49,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Super",
+      "purchase": 66,
+      "selling": 76,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Delux",
+      "purchase": 80,
+      "selling": 92,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Crystal",
+      "purchase": 82,
+      "selling": 95,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Durable Broom (NDB Packing)",
+      "purchase": 52,
+      "selling": 60,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Reliable Broom (NDB Packing)",
+      "purchase": 52,
+      "selling": 60,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Shagun",
+      "purchase": 29,
+      "selling": 34,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Green Gold",
+      "purchase": 45,
+      "selling": 52,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Twincle",
+      "purchase": 77,
+      "selling": 89,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Alladin",
+      "purchase": 688,
+      "selling": 792,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Trishul",
+      "purchase": 60,
+      "selling": 69,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Power",
+      "purchase": 70,
+      "selling": 81,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Clean India",
+      "purchase": 44,
+      "selling": 51,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Jumbo",
+      "purchase": 49,
+      "selling": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Star",
+      "purchase": 41,
+      "selling": 48,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Rajdhani",
+      "purchase": 82,
+      "selling": 95,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Jack",
+      "purchase": 87,
+      "selling": 101,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Trimurti",
+      "purchase": 71,
+      "selling": 82,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "No Dust Broom",
+      "purchase": 88,
+      "selling": 102,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "No Dust Broom 2 in 1",
+      "purchase": 102,
+      "selling": 118,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Small (Clean)",
+      "purchase": 17,
+      "selling": 20,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Medium (Clean)",
+      "purchase": 20,
+      "selling": 23,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Big (Clean)",
+      "purchase": 25,
+      "selling": 29,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Sweeper (Clean) 400 gm",
+      "purchase": 39,
+      "selling": 45,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Sweeper (Clean) 500 gm",
+      "purchase": 47,
+      "selling": 55,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Round Mop (Without Rod )",
+      "purchase": 39,
+      "selling": 45,
+      "mrp": 0,
+      "innerPack": 200,
+      "masterPack": 400
+    },
+    {
+      "name": "Google Mop 6\" (Without Rod )",
+      "purchase": 55,
+      "selling": 64,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 300
+    },
+    {
+      "name": "Yahoo Mop 9\" (Without Rod )",
+      "purchase": 75,
+      "selling": 87,
+      "mrp": 0,
+      "innerPack": 120,
+      "masterPack": 240
+    },
+    {
+      "name": "Twitter Mop 11\" (Without Rod )",
+      "purchase": 102,
+      "selling": 118,
+      "mrp": 0,
+      "innerPack": 90,
+      "masterPack": 180
+    },
+    {
+      "name": "Round Mop (4ft. Wooden Rod )",
+      "purchase": 59,
+      "selling": 68,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Google Mop 6\" (4ft. Wooden Rod )",
+      "purchase": 74,
+      "selling": 86,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Yahoo Mop 9\" (4ft. Wooden Rod )",
+      "purchase": 95,
+      "selling": 110,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "name": "Twitter Mop 11\" ( 4ft. Wooden Rod )",
+      "purchase": 122,
+      "selling": 141,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "name": "Round Mop (4ft. Metal Rod )",
+      "purchase": 68,
+      "selling": 79,
+      "mrp": 120,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Google Mop 6\" (4ft. Metal Rod )",
+      "purchase": 84,
+      "selling": 97,
+      "mrp": 210,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Yahoo Mop 9\" (4ft. Metal Rod )",
+      "purchase": 104,
+      "selling": 120,
+      "mrp": 250,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "name": "Twitter Mop 11\" ( 5ft. Metal Rod )",
+      "purchase": 141,
+      "selling": 163,
+      "mrp": 400,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "name": "Dustwin Mop ( 5ft. Metal Rod )",
+      "purchase": 123,
+      "selling": 142,
+      "mrp": 199,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Mini Wet Mop ( 5ft. Metal Rod )",
+      "purchase": 131,
+      "selling": 151,
+      "mrp": 299,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Cotton Wet Mop ( 5ft. Metal Rod )",
+      "purchase": 145,
+      "selling": 167,
+      "mrp": 359,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Aqua Mop 6\" ( Without Rod )",
+      "purchase": 65,
+      "selling": 75,
+      "mrp": 0,
+      "innerPack": 100,
+      "masterPack": 200
+    },
+    {
+      "name": "Deep Clean Mop 9\" ( Without Rod )",
+      "purchase": 81,
+      "selling": 94,
+      "mrp": 0,
+      "innerPack": 80,
+      "masterPack": 160
+    },
+    {
+      "name": "Majastic Mop 11\" ( Without Rod )",
+      "purchase": 106,
+      "selling": 122,
+      "mrp": 0,
+      "innerPack": 60,
+      "masterPack": 120
+    },
+    {
+      "name": "Aqua Mop 6\" ( 4 Ft. Metal Rod )",
+      "purchase": 95,
+      "selling": 110,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Deep Clean Mop 9\" ( 4 Ft. Metal Rod )",
+      "purchase": 110,
+      "selling": 127,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "name": "Majastic Mop 11\" ( 4 Ft. Metal Rod )",
+      "purchase": 136,
+      "selling": 157,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "name": "Aqua Mop 6\" ( 4 Ft. SS Rod )",
+      "purchase": 136,
+      "selling": 157,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Deep Clean Mop 9\" ( 4 Ft. SS Rod )",
+      "purchase": 151,
+      "selling": 174,
+      "mrp": 0,
+      "innerPack": 40,
+      "masterPack": 80
+    },
+    {
+      "name": "Majastic Mop 11\" ( 4 Ft. SS Rod )",
+      "purchase": 179,
+      "selling": 206,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 60
+    },
+    {
+      "name": "New Win Mop with Metal Rod",
+      "purchase": 140,
+      "selling": 161,
+      "mrp": 0,
+      "innerPack": 24,
+      "masterPack": 48
+    },
+    {
+      "name": "New Win Mop with SS Rod",
+      "purchase": 181,
+      "selling": 209,
+      "mrp": 0,
+      "innerPack": 24,
+      "masterPack": 48
+    },
+    {
+      "name": "Eagle Kitchen Wiper",
+      "purchase": 35,
+      "selling": 41,
+      "mrp": 99,
+      "innerPack": 12,
+      "masterPack": 108
+    },
+    {
+      "name": "Eagle Floor Wiper 12\" ( 2 Ft. SS Rod )",
+      "purchase": 100,
+      "selling": 115,
+      "mrp": 199,
+      "innerPack": 48,
+      "masterPack": 128
+    },
+    {
+      "name": "Eagle Floor Wiper 15\" ( 3 Ft. SS Rod )",
+      "purchase": 129,
+      "selling": 149,
+      "mrp": 240,
+      "innerPack": 36,
+      "masterPack": 108
+    },
+    {
+      "name": "Eagle Floor Wiper 20\" ( 4 Ft. SS Rod )",
+      "purchase": 152,
+      "selling": 175,
+      "mrp": 320,
+      "innerPack": 24,
+      "masterPack": 72
+    },
+    {
+      "name": "Amaze Kitchen Wiper",
+      "purchase": 23,
+      "selling": 27,
+      "mrp": 99,
+      "innerPack": 12,
+      "masterPack": 108
+    },
+    {
+      "name": "Amaze Floor Wiper 12\" ( 2 Ft. Metal Rod )",
+      "purchase": 58,
+      "selling": 67,
+      "mrp": 249,
+      "innerPack": 48,
+      "masterPack": 128
+    },
+    {
+      "name": "Amaze Floor Wiper 16\" ( 3 Ft. Metal Rod )",
+      "purchase": 72,
+      "selling": 83,
+      "mrp": 299,
+      "innerPack": 36,
+      "masterPack": 108
+    },
+    {
+      "name": "Amaze Floor Wiper 20\" ( 4 Ft. Metal Rod )",
+      "purchase": 88,
+      "selling": 102,
+      "mrp": 399,
+      "innerPack": 24,
+      "masterPack": 72
+    },
+    {
+      "name": "Mr. Tall ( 4 Ft. Metal Rod )",
+      "purchase": 114,
+      "selling": 132,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "name": "Mr. Tall ( 4 Ft. SS Rod )",
+      "purchase": 156,
+      "selling": 180,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "name": "Hardy ( 4 Ft. Metal Rod )",
+      "purchase": 103,
+      "selling": 119,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "name": "Hardy ( 4 Ft. SS Rod )",
+      "purchase": 145,
+      "selling": 167,
+      "mrp": 299,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "name": "Mini Hardy ( 2 Ft. Metal Rod )",
+      "purchase": 65,
+      "selling": 75,
+      "mrp": 149,
+      "innerPack": 48,
+      "masterPack": 192
+    },
+    {
+      "name": "Mini Hardy ( 2 Ft. SS Rod )",
+      "purchase": 85,
+      "selling": 98,
+      "mrp": 149,
+      "innerPack": 48,
+      "masterPack": 192
+    },
+    {
+      "name": "Omega Road Broom 18\"",
+      "purchase": 177,
+      "selling": 204,
+      "mrp": 390,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "name": "Omega Hardy Broom 18\"",
+      "purchase": 157,
+      "selling": 181,
+      "mrp": 390,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "name": "Carpet Brush",
+      "purchase": 52,
+      "selling": 60,
+      "mrp": 99,
+      "innerPack": 24,
+      "masterPack": 192
+    },
+    {
+      "name": "Small 17 X 19",
+      "purchase": 26,
+      "selling": 30,
+      "mrp": 63,
+      "innerPack": 12,
+      "masterPack": 288
+    },
+    {
+      "name": "Medium 19 X 21",
+      "purchase": 30,
+      "selling": 35,
+      "mrp": 81,
+      "innerPack": 12,
+      "masterPack": 240
+    },
+    {
+      "name": "Large 24 X 32",
+      "purchase": 39,
+      "selling": 45,
+      "mrp": 108,
+      "innerPack": 12,
+      "masterPack": 192
+    },
+    {
+      "name": "Ex. Large 30 X 37",
+      "purchase": 67,
+      "selling": 78,
+      "mrp": 180,
+      "innerPack": 6,
+      "masterPack": 108
+    },
+    {
+      "name": "Jumbo 36 X 48",
+      "purchase": 81,
+      "selling": 94,
+      "mrp": 216,
+      "innerPack": 6,
+      "masterPack": 96
+    },
+    {
+      "name": "Diamond Jala",
+      "purchase": 41,
+      "selling": 48,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "name": "Round Jala",
+      "purchase": 44,
+      "selling": 51,
+      "mrp": 0,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "name": "UC Round Jala Packing",
+      "purchase": 48,
+      "selling": 56,
+      "mrp": 199,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "name": "UC Diamnod Jala Packing",
+      "purchase": 50,
+      "selling": 58,
+      "mrp": 189,
+      "innerPack": 150,
+      "masterPack": 450
+    },
+    {
+      "name": "Celling Round Broom ( 6 Ft. SS Rod )",
+      "purchase": 124,
+      "selling": 143,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 150
+    },
+    {
+      "name": "Celling V Broom ( 6 Ft. SS Rod )",
+      "purchase": 121,
+      "selling": 140,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 150
+    },
+    {
+      "name": "Infinity Round Jala Broom ( 6 Ft. Heavy Metal Rod )",
+      "purchase": 96,
+      "selling": 111,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 96
+    },
+    {
+      "name": "Rubber Handgloves",
+      "purchase": 30,
+      "selling": 35,
+      "mrp": 129,
+      "innerPack": 6,
+      "masterPack": 120
+    },
+    {
+      "name": "Drain Cleaner",
+      "purchase": 14,
+      "selling": 17,
+      "mrp": 25,
+      "innerPack": 24,
+      "masterPack": 576
+    },
+    {
+      "name": "Dolphin Dust Pan",
+      "purchase": 23,
+      "selling": 27,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Wonder Dust Pan",
+      "purchase": 36,
+      "selling": 42,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Fiber Kharata",
+      "purchase": 36,
+      "selling": 42,
+      "mrp": 89,
+      "innerPack": 100,
+      "masterPack": 300
+    },
+    {
+      "name": "Alfa Hocky",
+      "purchase": 54,
+      "selling": 63,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Beta Hocky",
+      "purchase": 42,
+      "selling": 49,
+      "mrp": 110,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Gama Hocky",
+      "purchase": 36,
+      "selling": 42,
+      "mrp": 100,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Delta Hocky",
+      "purchase": 33,
+      "selling": 38,
+      "mrp": 90,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Double Hocky",
+      "purchase": 26,
+      "selling": 30,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 150
+    },
+    {
+      "name": "Zoom Hocky",
+      "purchase": 63,
+      "selling": 73,
+      "mrp": 149,
+      "innerPack": 0,
+      "masterPack": 72
+    },
+    {
+      "name": "Wonder Hockey",
+      "purchase": 49,
+      "selling": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 84
+    },
+    {
+      "name": "Star Hocky",
+      "purchase": 31,
+      "selling": 36,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "3 Star Hocky",
+      "purchase": 34,
+      "selling": 40,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "5 Star Hocky",
+      "purchase": 37,
+      "selling": 43,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "7 Star Hocky",
+      "purchase": 43,
+      "selling": 50,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Round Toilet brush",
+      "purchase": 48,
+      "selling": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 78
+    },
+    {
+      "name": "Toilet Brush With Container",
+      "purchase": 92,
+      "selling": 106,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 36
+    },
+    {
+      "name": "Jumbo Hocky",
+      "purchase": 77,
+      "selling": 89,
+      "mrp": 0,
+      "innerPack": 30,
+      "masterPack": 180
+    },
+    {
+      "name": "Omega Toilet brush With Container",
+      "purchase": 74,
+      "selling": 86,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "name": "Smart Plastic Kharata",
+      "purchase": 66,
+      "selling": 76,
+      "mrp": 129,
+      "innerPack": 12,
+      "masterPack": 1200
+    },
+    {
+      "name": "Premium Plastic Kharata",
+      "purchase": 67,
+      "selling": 78,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 120
+    },
+    {
+      "name": "Super safai Plastic Kharata",
+      "purchase": 69,
+      "selling": 80,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 120
+    },
+    {
+      "name": "Chakra Mop With Micro fiber Refill ( 4ft. Metal Rod )",
+      "purchase": 88,
+      "selling": 102,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Chakra Mop With cotton Refill ( 4 ft. Metal Rod )",
+      "purchase": 93,
+      "selling": 107,
+      "mrp": 0,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Smart Spin & Go Mop Plastic",
+      "purchase": 465,
+      "selling": 535,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Smart Spin & Go Mop Steel",
+      "purchase": 539,
+      "selling": 620,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Dream Spin & Go Mop Plastic",
+      "purchase": 495,
+      "selling": 570,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Dream Spin & Go Mop Steel",
+      "purchase": 568,
+      "selling": 654,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Elite Spin & Go Mop Plastic",
+      "purchase": 524,
+      "selling": 603,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Elite Spin & Go Mop Steel",
+      "purchase": 598,
+      "selling": 688,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Elegent Spin & Go Mop Plastic",
+      "purchase": 667,
+      "selling": 768,
+      "mrp": 1899,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Elegent Spin & Go Mop Steel",
+      "purchase": 748,
+      "selling": 861,
+      "mrp": 1999,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Spin & Go Rod + Plate",
+      "purchase": 130,
+      "selling": 150,
+      "mrp": 350,
+      "innerPack": 20,
+      "masterPack": 80
+    },
+    {
+      "name": "Spin & Go Rod + Plate Heavy",
+      "purchase": 250,
+      "selling": 288,
+      "mrp": 550,
+      "innerPack": 20,
+      "masterPack": 80
+    },
+    {
+      "name": "Floor Duster 24 X 24",
+      "purchase": 20,
+      "selling": 23,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "name": "Check Duster 18 X 28",
+      "purchase": 14,
+      "selling": 17,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "name": "Glass Duster 23 X 23",
+      "purchase": 20,
+      "selling": 23,
+      "mrp": 49,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "name": "Microfiber Duster 16 X 16",
+      "purchase": 46,
+      "selling": 53,
+      "mrp": 99,
+      "innerPack": 25,
+      "masterPack": 100
+    },
+    {
+      "name": "Cotton Dust control mop 18\" ( 4 Ft. Rod )",
+      "purchase": 141,
+      "selling": 163,
+      "mrp": 449,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Cotton Dust control mop 24\" ( 5 Ft. Rod )",
+      "purchase": 165,
+      "selling": 190,
+      "mrp": 490,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Blue Dust control mop 18\" ( 4 Ft. Rod )",
+      "purchase": 148,
+      "selling": 171,
+      "mrp": 449,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Blue Dust control mop 24\" ( 5 Ft. Rod )",
+      "purchase": 168,
+      "selling": 194,
+      "mrp": 490,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Gray Dust control mop 18\" Heavy",
+      "purchase": 234,
+      "selling": 270,
+      "mrp": 950,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Gray Dust control mop 24\" Heavy",
+      "purchase": 278,
+      "selling": 320,
+      "mrp": 999,
+      "innerPack": 50,
+      "masterPack": 100
+    },
+    {
+      "name": "Nephthalene Balls 100",
+      "purchase": 24,
+      "selling": 28,
+      "mrp": 60,
+      "innerPack": 0,
+      "masterPack": 250
+    },
+    {
+      "name": "Nephthalene Balls 250",
+      "purchase": 57,
+      "selling": 66,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Nephthalene Balls 500",
+      "purchase": 112,
+      "selling": 129,
+      "mrp": 210,
+      "innerPack": 0,
+      "masterPack": 50
+    },
+    {
+      "name": "Nephthalene Balls 1000",
+      "purchase": 218,
+      "selling": 251,
+      "mrp": 399,
+      "innerPack": 0,
+      "masterPack": 25
+    },
+    {
+      "name": "Air Freshner 50 gms Odonil type",
+      "purchase": 18,
+      "selling": 21,
+      "mrp": 45,
+      "innerPack": 24,
+      "masterPack": 576
+    },
+    {
+      "name": "Seni Cubes 100 gms",
+      "purchase": 26,
+      "selling": 30,
+      "mrp": 49,
+      "innerPack": 0,
+      "masterPack": 144
+    },
+    {
+      "name": "Seni Cubes 140 gms",
+      "purchase": 36,
+      "selling": 42,
+      "mrp": 70,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Seni Cubes 200 gms",
+      "purchase": 51,
+      "selling": 59,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 84
+    },
+    {
+      "name": "Urinal Screen Premium",
+      "purchase": 41,
+      "selling": 48,
+      "mrp": 120,
+      "innerPack": 10,
+      "masterPack": 120
+    },
+    {
+      "name": "Toilet Roll 100 gms",
+      "purchase": 21,
+      "selling": 25,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 125
+    },
+    {
+      "name": "Toilet Roll 150 gms",
+      "purchase": 28,
+      "selling": 33,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 80
+    },
+    {
+      "name": "Kitchen Roll 200 gms",
+      "purchase": 53,
+      "selling": 61,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 72
+    },
+    {
+      "name": "White Phenyle 1 Lit",
+      "purchase": 29,
+      "selling": 34,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "White Phenyle 5 Lit",
+      "purchase": 112,
+      "selling": 129,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Colour Phenyle 1 Lit",
+      "purchase": 32,
+      "selling": 37,
+      "mrp": 85,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Colour Phenyle 5 Lit",
+      "purchase": 130,
+      "selling": 150,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Floor Hard Surface Cleaner 500 ml",
+      "purchase": 58,
+      "selling": 67,
+      "mrp": 120,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Floor Hard Surface Cleaner 5 Lit",
+      "purchase": 281,
+      "selling": 324,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Glass Cleaner 500ml",
+      "purchase": 58,
+      "selling": 67,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Glass Cleaner 1 Ltr.",
+      "purchase": 64,
+      "selling": 74,
+      "mrp": 99,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Glass Cleaner 5 Ltr.",
+      "purchase": 273,
+      "selling": 314,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Toilet Cleaner 500ml",
+      "purchase": 52,
+      "selling": 60,
+      "mrp": 95,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Toilet Cleaner 5 Lit",
+      "purchase": 233,
+      "selling": 268,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Handwash 250ml",
+      "purchase": 62,
+      "selling": 72,
+      "mrp": 90,
+      "innerPack": 0,
+      "masterPack": 48
+    },
+    {
+      "name": "Handwash 500ml",
+      "purchase": 82,
+      "selling": 95,
+      "mrp": 160,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Handwash 1 Ltr.",
+      "purchase": 112,
+      "selling": 129,
+      "mrp": 220,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Handwash 5 Ltr.",
+      "purchase": 318,
+      "selling": 366,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Dishwash Gel 500 ml",
+      "purchase": 73,
+      "selling": 84,
+      "mrp": 125,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Dishwash Gel 1 Ltr.",
+      "purchase": 113,
+      "selling": 130,
+      "mrp": 220,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Dishwash Gel 5 Ltr.",
+      "purchase": 399,
+      "selling": 459,
+      "mrp": 750,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Black Finyle 450ml",
+      "purchase": 44,
+      "selling": 51,
+      "mrp": 75,
+      "innerPack": 0,
+      "masterPack": 42
+    },
+    {
+      "name": "Black Finyle 5 Lit.",
+      "purchase": 324,
+      "selling": 373,
+      "mrp": 550,
+      "innerPack": 0,
+      "masterPack": 4
+    },
+    {
+      "name": "Bathroom Cleaner 500ml",
+      "purchase": 57,
+      "selling": 66,
+      "mrp": 550,
+      "innerPack": 0,
+      "masterPack": 24
+    },
+    {
+      "name": "Laundry Detergent 1 lit",
+      "purchase": 159,
+      "selling": 183,
+      "mrp": 300,
+      "innerPack": 0,
+      "masterPack": 12
+    },
+    {
+      "name": "Tap Cleaner 250ml",
+      "purchase": 85,
+      "selling": 98,
+      "mrp": 250,
+      "innerPack": 0,
+      "masterPack": 48
+    },
+    {
+      "name": "Steel Scrubber Small Yellow 12 pcs",
+      "purchase": 55,
+      "selling": 64,
+      "mrp": 15,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Steel Scrubber Medium Green 12pcs",
+      "purchase": 71,
+      "selling": 82,
+      "mrp": 20,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Steel Scrubber Medium Red 12 pcs",
+      "purchase": 107,
+      "selling": 124,
+      "mrp": 25,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Green Pad Small 3 X 4",
+      "purchase": 5,
+      "selling": 6,
+      "mrp": 10,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Green Pad Big 4 X 6",
+      "purchase": 8,
+      "selling": 10,
+      "mrp": 25,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Green Pad Sponge Scrubber",
+      "purchase": 9,
+      "selling": 11,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Green Scrubber Pack of 10's",
+      "purchase": 33,
+      "selling": 38,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Iron Tile Brush",
+      "purchase": 49,
+      "selling": 57,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 96
+    },
+    {
+      "name": "Cellulose Sponge 3 Pcs",
+      "purchase": 58,
+      "selling": 67,
+      "mrp": 0,
+      "innerPack": 12,
+      "masterPack": 144
+    },
+    {
+      "name": "Xing Scrubber (4 Pcs.)",
+      "purchase": 39,
+      "selling": 45,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Xing Scrubber (3 Pcs.)",
+      "purchase": 45,
+      "selling": 52,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Dish Cleaning Pad Scrubber (3 Pcs.)",
+      "purchase": 92,
+      "selling": 106,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Comfort Patla ( 4 Pcs.)",
+      "purchase": 107,
+      "selling": 124,
+      "mrp": 240,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Wooden Premium Patla",
+      "purchase": 35,
+      "selling": 41,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Puma Press Patla",
+      "purchase": 40,
+      "selling": 46,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Besin Brush",
+      "purchase": 19,
+      "selling": 22,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 0
+    },
+    {
+      "name": "Plunger Small",
+      "purchase": 36,
+      "selling": 42,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 108
+    },
+    {
+      "name": "Plunger Big",
+      "purchase": 43,
+      "selling": 50,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 96
+    },
+    {
+      "name": "Refill Round Mop",
+      "purchase": 22,
+      "selling": 26,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Google Mop",
+      "purchase": 37,
+      "selling": 43,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Yahoo Mop",
+      "purchase": 46,
+      "selling": 53,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Mini Wet Mop",
+      "purchase": 56,
+      "selling": 65,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Dustwin Mop",
+      "purchase": 49,
+      "selling": 57,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Perfect Mop",
+      "purchase": 61,
+      "selling": 71,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Cotton Wet Mop",
+      "purchase": 65,
+      "selling": 75,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Win Mop",
+      "purchase": 28,
+      "selling": 33,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refilll Master Mop",
+      "purchase": 21,
+      "selling": 25,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Cotton Dust Control 18\"",
+      "purchase": 35,
+      "selling": 41,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Cotton Dust Control 24\"",
+      "purchase": 47,
+      "selling": 55,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Blue Dust Control 18\"",
+      "purchase": 41,
+      "selling": 48,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Blue Dust Control 24\"",
+      "purchase": 48,
+      "selling": 56,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Gray Dust control mop 18\" Heavy",
+      "purchase": 117,
+      "selling": 135,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    },
+    {
+      "name": "Refill Gray Dust control mop 24\" Heavy",
+      "purchase": 131,
+      "selling": 151,
+      "mrp": 0,
+      "innerPack": 0,
+      "masterPack": 100
+    }
+  ]
+}

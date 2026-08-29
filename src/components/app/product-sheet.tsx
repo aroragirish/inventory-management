@@ -7,7 +7,7 @@ import { useActionState, useEffect, useState } from "react";
 import { Alert, Button, Field, Input, Select } from "@/components/ui/primitives";
 import { ConfirmDialog, Sheet } from "@/components/ui/sheet";
 import { useToast } from "@/components/ui/toast";
-import { cn, money } from "@/lib/format";
+import { cn, money, qty } from "@/lib/format";
 import type { ActionResult } from "@/server/actions/result";
 import {
   deleteProduct,
@@ -41,6 +41,9 @@ export function ProductSheet({
   const [cost, setCost] = useState(() => (product ? String(product.costPrice) : ""));
   const [selling, setSelling] = useState(() =>
     product ? String(product.sellingPrice) : "",
+  );
+  const [pendingQty, setPendingQty] = useState(() =>
+    product ? String(product.paymentPendingQty) : "0",
   );
   const router = useRouter();
   const toast = useToast();
@@ -282,6 +285,26 @@ export function ProductSheet({
               inputMode="decimal"
             />
           </Field>
+
+          <Field
+            label="Payment pending"
+            hint="Units already on the shelf that the supplier has not been paid for. Set it to 0 once the bill is settled."
+            error={errors?.paymentPendingQty}
+          >
+            <Input
+              name="paymentPendingQty"
+              defaultValue={product?.paymentPendingQty ?? 0}
+              inputMode="decimal"
+              onChange={(event) => setPendingQty(event.target.value)}
+            />
+          </Field>
+
+          {Number(pendingQty) > 0 && (
+            <p className="num -mt-2 text-xs text-warning">
+              {qty(Number(pendingQty))} {product?.unit ?? "pcs"} unpaid ·{" "}
+              {money(Number(pendingQty) * Number(cost || 0))} owed at the cost above.
+            </p>
+          )}
 
           {editing && (
             <div className="space-y-2 border-t border-border pt-4">

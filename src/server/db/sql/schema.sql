@@ -41,11 +41,18 @@ create table if not exists products (
   master_pack         numeric(12, 2) not null default 0,
   low_stock_threshold numeric(14, 3) not null default 0,
   opening_stock       numeric(14, 3) not null default 0,
+  -- Goods on the shelf whose purchase bill has not been paid yet. Tally shows
+  -- these as a negative closing balance; here the stock is counted positively
+  -- and the outstanding quantity is carried separately.
+  payment_pending_qty numeric(14, 3) not null default 0,
   needs_pricing       boolean       not null default false,
   active              boolean       not null default true,
   created_at          timestamptz   not null default now(),
   updated_at          timestamptz   not null default now()
 );
+
+-- Added after the first release, so existing databases pick it up too.
+alter table products add column if not exists payment_pending_qty numeric(14, 3) not null default 0;
 
 create unique index if not exists products_sku_key on products (lower(sku));
 create index if not exists products_category_idx on products (category_id);

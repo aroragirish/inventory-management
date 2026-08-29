@@ -15,7 +15,7 @@ import {
 import { useToast } from "@/components/ui/toast";
 import { cn, money, qty } from "@/lib/format";
 import type { CategoryDTO, ProductDTO } from "@/server/dto";
-import { ProductSheet } from "./product-sheet";
+import { ProductSheet } from "@/components/app/product-sheet";
 
 type Status = "all" | "negative" | "low" | "out" | "ok";
 type Sort = "name" | "stock" | "costPrice" | "sellingPrice" | "value";
@@ -265,8 +265,13 @@ export function InventoryScreen({
                     </div>
                   </dl>
 
-                  <div className="mt-2.5">
+                  <div className="mt-2.5 flex flex-wrap gap-1.5">
                     <StockBadge status={product.status} />
+                    {product.paymentPendingQty > 0 && (
+                      <Badge tone="warning">
+                        {qty(product.paymentPendingQty)} unpaid
+                      </Badge>
+                    )}
                   </div>
                 </Card>
               </li>
@@ -313,6 +318,15 @@ export function InventoryScreen({
                           {product.needsPricing && (
                             <Badge tone="warning" className="text-[10px]">
                               needs price
+                            </Badge>
+                          )}
+                          {product.paymentPendingQty > 0 && (
+                            <Badge
+                              tone="warning"
+                              className="text-[10px]"
+                              title={`${qty(product.paymentPendingQty)} ${product.unit} on the shelf that the supplier has not been paid for`}
+                            >
+                              {qty(product.paymentPendingQty)} unpaid
                             </Badge>
                           )}
                         </p>

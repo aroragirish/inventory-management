@@ -170,14 +170,14 @@ async function main() {
     [
       "id", "name", "sku", "category_id", "unit", "cost_price", "selling_price", "mrp",
       "inner_pack", "master_pack", "low_stock_threshold", "opening_stock",
-      "needs_pricing", "active", "created_at", "updated_at",
+      "payment_pending_qty", "needs_pricing", "active", "created_at", "updated_at",
     ],
     products,
     (p) => [
       p.id, p.name, p.sku, p.categoryId, p.unit,
       nz(p.costPrice), nz(p.sellingPrice), nz(p.mrp),
       nz(p.innerPack), nz(p.masterPack), nz(p.lowStockThreshold), nz(p.openingStock),
-      Boolean(p.needsPricing), p.active, p.createdAt, p.updatedAt,
+      nz(p.paymentPendingQty), Boolean(p.needsPricing), p.active, p.createdAt, p.updatedAt,
     ],
   );
 
