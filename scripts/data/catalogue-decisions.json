@@ -1,15 +1,12 @@
 {
   "note": "The calls made by hand on 29-Aug-2026, when the May-2026 price list was reconciled against the Tally stock summary. Everything here overrides what the price list or the stock summary would otherwise say, and every entry records why - a bare number with no reason behind it is how the last catalogue drifted.",
   "decidedOn": "2026-08-29",
-
   "priceSource": "price-list",
   "priceSourceWhy": "Cost = Itwari SS price, selling = UltraClean Dist. price, both effective 01-05-2026. Tally's closing rate is a weighted average of what was paid across the year and had drifted more than 10% from the list on 53 of the matched items; taking both prices from one document is what makes every margin real. Items with no counterpart in the list keep their Tally rate as cost.",
-
   "exclude": {
     "Deep Clean Mop 9''": "Not to be carried any more.",
     "Prime Dust Pan": "Discontinued - to come out of the app."
   },
-
   "overrides": {
     "Orrisa Broom Alladin": {
       "costPrice": 69,
@@ -23,23 +20,23 @@
     },
     "UC Airfrshner 50gm": {
       "innerPack": 4,
-      "why": "Priced per piece at the list's 18 / 21. Tally's 51.13 is a pack-of-four rate."
+      "why": "Priced per piece at the list's 18 / 21, and counted per piece. Tally's 51.13 is a pack-of-four rate, which is why it looks three times too high."
     },
     "UC Steel Scrubber Red": {
-      "innerPack": 6,
-      "why": "Priced per pack. Six pieces to a pack, whatever the list's item name says."
+      "countedInPacksOf": 6,
+      "why": "Counted by the piece in Tally, priced by the pack on the list. Six to a pack, whatever the list's item name says."
     },
     "UC Steel Scrubber 12pcs Yellow": {
-      "innerPack": 12,
-      "why": "Priced per pack. Twelve pieces to a pack."
+      "countedInPacksOf": 12,
+      "why": "Tally counts this loose, by the piece; the list prices it by the pack of twelve. The quantity is converted to packs so the two agree."
     },
     "Steel Scrubber Green": {
-      "innerPack": 12,
-      "why": "Priced per pack. Twelve pieces to a pack."
+      "countedInPacksOf": 12,
+      "why": "Counted by the piece in Tally, priced by the pack of twelve on the list."
     },
     "UC Comfort Patla": {
-      "innerPack": 4,
-      "why": "Priced per pack. Four pieces to a pack."
+      "countedInPacksOf": 4,
+      "why": "Counted by the piece in Tally, priced by the pack of four on the list."
     }
   }
 }

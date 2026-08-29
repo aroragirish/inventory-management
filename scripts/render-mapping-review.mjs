@@ -36,18 +36,18 @@ const decisionsTaken = (n) => [
   },
   {
     id: "packs",
-    title: "Scrubbers and Comfort Patla are priced per pack",
-    outcome: "applied — worth one look",
+    title: "Four items are counted loose but priced by the pack",
+    outcome: "converted to packs",
     body:
-      "Red at 6 to a pack, green and yellow at 12, Comfort Patla at 4, each carrying the list's pack price. That is what turns ₹5.54 L of stock into ₹8.72 L: these four items alone account for ₹3,49,668 of it, against ₹51,201 at Tally's old rates.",
-    watch:
-      "This is right only if Tally is counting packs. Its own rates for them — ₹8.76, ₹10.79, ₹8.92 — read like per-piece figures, and invoice 994 bills steel scrubber by the piece at ₹3.88 and ₹7.56. If those 3,437 yellow are loose pieces rather than 3,437 packs, say so and I will divide the four by their pack size. It is a one-line change.",
+      "Tally counts steel scrubbers and Comfort Patla by the piece; the list prices them by the pack. Rather than pay a pack price for a single piece, the count is converted first — 3,437 yellow scrubbers is 286.417 packs of twelve, and it is the pack that costs ₹55. Their unit on the Products screen is now the pack.",
     rows: [
-      ["UC Steel Scrubber 12pcs Yellow", "3,437 × ₹55", "₹1,89,035", "was ₹30,108"],
-      ["Steel Scrubber Green", "1,420 × ₹71", "₹1,00,820", "was ₹15,322"],
-      ["UC Steel Scrubber Red", "511 × ₹107", "₹54,677", "was ₹4,558"],
-      ["UC Comfort Patla", "48 × ₹107", "₹5,136", "was ₹1,213"],
+      ["UC Steel Scrubber 12pcs Yellow", "3,437 pcs ÷ 12", "286.417 × ₹55", "₹15,753"],
+      ["Steel Scrubber Green", "1,420 pcs ÷ 12", "118.333 × ₹71", "₹8,402"],
+      ["UC Steel Scrubber Red", "511 pcs ÷ 6", "85.167 × ₹107", "₹9,113"],
+      ["UC Comfort Patla", "48 pcs ÷ 4", "12 × ₹107", "₹1,284"],
     ],
+    watch:
+      "One number to sanity-check when you get a moment: at six to a pack, Red works out at ₹17.83 a piece. Tally recorded ₹8.92 — which is exactly ₹107 ÷ 12 — and invoice 994 bills steel scrubber red at ₹7.56 a piece. If Red is really twelve to a pack, say so and its 85.167 becomes 42.583.",
     settled: false,
   },
   {
@@ -63,7 +63,7 @@ const decisionsTaken = (n) => [
     title: "UC Airfrshner is the ₹18 item after all",
     outcome: "₹18 cost · ₹21 selling",
     body:
-      "Tally's ₹51.13 was a pack-of-four rate, not a different product. Priced per piece from the list, with the pack of four recorded against it.",
+      "Tally's ₹51.13 was a pack-of-four rate, not a different product. This one is counted by the piece and priced by the piece, so the count stands; only the pack of four is recorded against it for reference.",
     settled: true,
   },
   {

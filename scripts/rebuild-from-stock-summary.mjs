@@ -279,19 +279,27 @@ async function main() {
     const override = overrides[name];
     if (override) unusedOverrides.delete(name);
 
-    const unit = UNIT_BY_REPORT_WORD[String(row.unit).toLowerCase()] ?? "pcs";
+    // A few items are counted loose in Tally but priced by the pack on the
+    // list. Convert the count into packs so the quantity and the price are
+    // talking about the same thing - 3,437 scrubbers is 286.417 packs of 12,
+    // and it is the pack that costs 55.
+    const packOf = override?.countedInPacksOf ?? 0;
+    const inPacks = (pieces) => (packOf > 0 ? Math.round((pieces / packOf) * 1000) / 1000 : pieces);
+
+    const unit = packOf > 0 ? "pac" : (UNIT_BY_REPORT_WORD[String(row.unit).toLowerCase()] ?? "pcs");
 
     // Tally counts down when goods arrive against no bill. The stock is real;
     // it is the payment that is outstanding.
-    const pending = row.qty < 0 ? Math.abs(row.qty) : 0;
-    const openingStock = Math.abs(row.qty);
+    const pending = inPacks(row.qty < 0 ? Math.abs(row.qty) : 0);
+    const openingStock = inPacks(Math.abs(row.qty));
 
     // The list is the authority on price. Only an item it does not carry falls
     // back to Tally's rate, and then only for cost - there is no selling price
     // to guess at, so it gets badged instead.
     const costPrice = override?.costPrice ?? item?.purchase ?? row.rate ?? 0;
     const sellingPrice = override?.sellingPrice ?? item?.selling ?? 0;
-    const innerPack = override?.innerPack ?? item?.innerPack ?? 0;
+    // When the unit is the pack, the pack size is what is inside it.
+    const innerPack = override?.innerPack ?? packOf ?? item?.innerPack ?? 0;
 
     products.push({
       id: randomUUID(),
@@ -304,8 +312,9 @@ async function main() {
       mrp: round2(override?.mrp ?? item?.mrp ?? 0),
       innerPack,
       masterPack: override?.masterPack ?? item?.masterPack ?? 0,
-      // Alert at one inner pack; fall back to a sane floor when packing is unknown.
-      lowStockThreshold: innerPack > 0 ? innerPack : 12,
+      // Alert at one inner pack; fall back to a sane floor when packing is
+      // unknown, or when the unit is already the pack.
+      lowStockThreshold: packOf > 0 || innerPack === 0 ? 12 : innerPack,
       openingStock,
       paymentPendingQty: pending,
       needsPricing: sellingPrice <= 0,
@@ -319,6 +328,7 @@ async function main() {
       category,
       unit,
       qty: row.qty,
+      countedInPacksOf: packOf || null,
       openingStock,
       pending,
       reportRate: row.rate,
